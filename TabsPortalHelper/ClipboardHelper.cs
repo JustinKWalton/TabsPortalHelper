@@ -14,16 +14,18 @@ namespace TabsPortalHelper
     /// format name "Bluebeam.Windows.View.Input.BBCopyItem", so Ctrl+V
     /// inside Bluebeam Revu pastes a live, editable annotation.
     ///
-    /// Approach: an embedded template.bin holds a pre-captured BBCopyItem
-    /// blob (BinaryFormatter-serialized). Deep inside it, one string field
-    /// (m_sData) holds the raw PDF annotation dictionary. We do byte-level
-    /// surgery on that string — rewriting /Subj, /BSIColumnData[...],
-    /// /RC, and /Contents — then fix up the BinaryFormatter 7-bit length
-    /// prefix and splice the result back.
+    /// BSI column mapping (MUST match the ColumnInstaller canonical schema
+    /// and the generate-markup-summary edge function's extractMarkups):
+    ///     BSI[0] = user Note     (the text in the "Note" column)
+    ///     BSI[1] = Comment Status
+    ///     BSI[2] = Element       (aka ItemCategory)
+    ///     BSI[3] = Location
+    /// DO NOT reorder these without updating both ColumnInstaller.TabsColumns
+    /// and the edge function's bsiStrs[0..3] mapping.
     /// </summary>
     static class ClipboardHelper
     {
-        // ── Win32 P/Invoke ──────────────────────────────────────────────────
+        // ── Win32 P/Invoke ───────────────────────────────────────────────────
         const uint GMEM_MOVEABLE = 0x0002;
 
         [DllImport("user32.dll", SetLastError = true)]
@@ -61,9 +63,10 @@ namespace TabsPortalHelper
         {
             public string? Subject      { get; set; }
             public string? Location     { get; set; }
-            public string? ItemCategory { get; set; }
-            public string? Status       { get; set; }
-            public string? Contents     { get; set; }   // plain text
+            public string? ItemCategory { get; set; }   // → BSI[2] (Element)
+            public string? Status       { get; set; }   // → BSI[1]
+            public string? Note         { get; set; }   // → BSI[0] — the user's free-form note
+            public string? Contents     { get; set; }   // plain text — /Contents + /RC body
             public string? RcHtml       { get; set; }   // optional XHTML; auto-generated from Contents if null
         }
 
@@ -134,9 +137,6 @@ namespace TabsPortalHelper
                     "Could not locate m_sData content in template — template file may be damaged.");
 
             // Walk backwards to find the BinaryFormatter 7-bit length prefix.
-            // The byte immediately before the content is the LAST byte of the
-            // length (high bit clear). Preceding bytes with high bit SET are
-            // continuation bytes.
             int prefixEnd = markerPos - 1;
             if ((template[prefixEnd] & 0x80) != 0)
                 throw new InvalidOperationException("Malformed length prefix: terminal byte has continuation bit set.");
@@ -146,19 +146,14 @@ namespace TabsPortalHelper
 
             int oldStringLen = DecodeVarInt(template, prefixStart, out int _);
 
-            // Extract the original PDF dict string. BinaryFormatter encodes
-            // .NET strings as UTF-8; the template's content is pure ASCII so
-            // UTF-8 and Latin-1 would both round-trip cleanly here.
             string oldData = Encoding.UTF8.GetString(template, markerPos, oldStringLen);
 
-            // Rewrite the PDF dictionary fields.
             string newData = RewritePdfDict(oldData, req);
 
             byte[] newDataBytes = Encoding.UTF8.GetBytes(newData);
             int    newStringLen = newDataBytes.Length;
             byte[] newPrefix    = EncodeVarInt(newStringLen);
 
-            // Splice: [prefix-preceding bytes] + [new length prefix] + [new string] + [suffix bytes]
             int suffixStart = markerPos + oldStringLen;
             int suffixLen   = template.Length - suffixStart;
             int newTotal    = prefixStart + newPrefix.Length + newStringLen + suffixLen;
@@ -173,7 +168,7 @@ namespace TabsPortalHelper
             return result;
         }
 
-        // ── PDF annotation dict rewriter ───────────────────────────────────
+        // ── PDF annotation dict rewriter ────────────────────────────────────
 
         static string RewritePdfDict(string pdfDict, MarkupRequest req)
         {
@@ -182,6 +177,7 @@ namespace TabsPortalHelper
             string location     = req.Location     ?? "";
             string itemCategory = req.ItemCategory ?? "";
             string status       = req.Status       ?? "";
+            string note         = req.Note         ?? "";   // BSI[0] — the user's note, NOT the code content
 
             // Normalize newlines to CR — Bluebeam's native Contents hex
             // uses 000D (CR) for paragraph breaks.
@@ -190,7 +186,13 @@ namespace TabsPortalHelper
             string rcHtml = req.RcHtml ?? BuildXhtmlFromPlainText(contents);
 
             pdfDict = ReplacePdfLiteralString(pdfDict, "/Subj", subject);
-            pdfDict = ReplaceBsiColumnData(pdfDict, contents, status, itemCategory, location);
+            // BSI column order is contractual — MUST match ColumnInstaller's TabsColumns
+            // and the edge function's extractMarkups bsiStrs[0..3] mapping.
+            pdfDict = ReplaceBsiColumnData(pdfDict,
+                note:     note,         // BSI[0]
+                status:   status,       // BSI[1]
+                element:  itemCategory, // BSI[2]
+                location: location);    // BSI[3]
             pdfDict = ReplacePdfLiteralString(pdfDict, "/RC", rcHtml);
             pdfDict = ReplacePdfHexString(pdfDict, "/Contents", EncodeContentsHex(contents));
 
@@ -258,7 +260,12 @@ namespace TabsPortalHelper
                  + dict.Substring(close);
         }
 
-        static string ReplaceBsiColumnData(string dict, string comments, string status, string category, string location)
+        /// <summary>
+        /// Writes a 4-element PDF array into the /BSIColumnData field.
+        /// Order MUST match the canonical TABS column schema:
+        ///   BSI[0] = note, BSI[1] = status, BSI[2] = element, BSI[3] = location
+        /// </summary>
+        static string ReplaceBsiColumnData(string dict, string note, string status, string element, string location)
         {
             int keyIdx = dict.IndexOf("/BSIColumnData[", StringComparison.Ordinal);
             if (keyIdx < 0) return dict;
@@ -268,10 +275,10 @@ namespace TabsPortalHelper
             if (close < 0) return dict;
 
             string newArray = "["
-                + "(" + EscapePdfLiteral(comments) + ")"
-                + "(" + EscapePdfLiteral(status)   + ")"
-                + "(" + EscapePdfLiteral(category) + ")"
-                + "(" + EscapePdfLiteral(location) + ")"
+                + "(" + EscapePdfLiteral(note)     + ")"   // BSI[0] — user note (was incorrectly the code contents)
+                + "(" + EscapePdfLiteral(status)   + ")"   // BSI[1] — comment status
+                + "(" + EscapePdfLiteral(element)  + ")"   // BSI[2] — element
+                + "(" + EscapePdfLiteral(location) + ")"   // BSI[3] — location
                 + "]";
 
             return dict.Substring(0, open)

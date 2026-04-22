@@ -256,7 +256,7 @@ namespace TabsPortalHelper
             }
         }
 
-        // ── NEW: Bluebeam clipboard markup ──────────────────────────────────
+        // ── Bluebeam clipboard markup ───────────────────────────────────────
 
         void HandleClipboardMarkup(HttpListenerContext ctx)
         {
@@ -286,6 +286,7 @@ namespace TabsPortalHelper
                     Location     = dto.Location,
                     ItemCategory = dto.ItemCategory,
                     Status       = dto.Status,
+                    Note         = dto.Note,       // NEW — user's free-form note → BSI[0]
                     Contents     = dto.Contents,
                     RcHtml       = dto.RcHtml,
                 });
@@ -314,6 +315,7 @@ namespace TabsPortalHelper
             public string? Location     { get; set; }
             public string? ItemCategory { get; set; }
             public string? Status       { get; set; }
+            public string? Note         { get; set; }   // NEW — user's free-form note (goes to BSI[0])
             public string? Contents     { get; set; }
             public string? RcHtml       { get; set; }
         }
