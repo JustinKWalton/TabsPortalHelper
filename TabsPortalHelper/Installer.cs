@@ -10,7 +10,7 @@ namespace TabsPortalHelper
     static class Installer
     {
         const string AppName = "TABS Portal Helper";
-        const string AppVersion = "2.0.0";
+        const string AppVersion = "2.2.0";
         const string UninstallRegKey = @"Software\Microsoft\Windows\CurrentVersion\Uninstall\TabsPortalHelper";
         const string StartupRegKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
         const string TabsRegKey = @"Software\TabsPortalHelper";
@@ -34,56 +34,38 @@ namespace TabsPortalHelper
                     ? $"\n\nGoogle Drive detected at:\n{driveRoot}"
                     : "\n\n⚠ Google Drive root not detected.\nMake sure Drive for Desktop is installed and signed in.";
 
-                // ── Bluebeam custom columns (Note, Comment Status, Element, Location) ──
-                // Idempotent: if columns already present, status is NotNeeded and nothing is touched.
-                // If Bluebeam is running, we surface a message telling the user how to finish setup.
-                string columnMsg;
-                try
-                {
-                    var columnResult = ColumnInstaller.CheckAndInstall();
-                    switch (columnResult.Status)
-                    {
-                        case ColumnInstaller.InstallStatus.Installed:
-                            columnMsg = $"\n\n✓ Bluebeam columns configured ({columnResult.TouchedFiles.Count} profile(s)).";
-                            break;
-                        case ColumnInstaller.InstallStatus.NotNeeded:
-                            columnMsg = "\n\n✓ Bluebeam columns already configured.";
-                            break;
-                        case ColumnInstaller.InstallStatus.BluebeamRunning:
-                            columnMsg = "\n\n⚠ Bluebeam Revu is running. Close it, then right-click the TABS " +
-                                        "tray icon and choose 'Install Bluebeam Columns...' to finish setup.";
-                            break;
-                        case ColumnInstaller.InstallStatus.NoProfileFound:
-                            columnMsg = "\n\n⚠ No Bluebeam Revu 21/2024/2025 profile found. Launch Bluebeam once " +
-                                        "to create one, then use the tray menu 'Install Bluebeam Columns...'.";
-                            break;
-                        case ColumnInstaller.InstallStatus.ConflictDetected:
-                            columnMsg = "\n\n⚠ Bluebeam column conflict: " + columnResult.Message;
-                            break;
-                        default:
-                            columnMsg = $"\n\n⚠ Bluebeam column setup: {columnResult.Status} — {columnResult.Message}";
-                            break;
-                    }
-                }
-                catch (Exception cex)
-                {
-                    // Never fail the whole install because columns couldn't be set up.
-                    columnMsg = "\n\n⚠ Bluebeam column setup skipped: " + cex.Message;
-                }
+                // Launch the tray app first so the user sees the icon while the dialog is open.
+                LaunchTrayApp();
 
-                MessageBox.Show(
+                // The install-success preamble shown in the dialog's upper portion.
+                // The column-status line is appended/swapped by ColumnInstallDialog itself.
+                string preamble =
                     $"{AppName} v{AppVersion} installed successfully!\n\n" +
                     $"The helper is now running in your system tray (look for the TABS icon " +
                     $"near the clock) and will start automatically with Windows.\n\n" +
                     $"If you downloaded an installer file, that download can now be deleted — " +
-                    $"the helper has been copied to its permanent location.{driveMsg}{columnMsg}",
-                    AppName,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    $"the helper has been copied to its permanent location." + driveMsg;
 
-                // Leave the user in a working state: launch the tray app so they don't
-                // have to wait until next Windows login for the icon to appear.
-                LaunchTrayApp();
+                // Bluebeam custom columns: idempotent. If Bluebeam is running, the dialog
+                // gates on the user closing it and clicking Retry to complete setup.
+                ColumnInstaller.InstallResult columnResult;
+                try
+                {
+                    columnResult = ColumnInstaller.CheckAndInstall();
+                }
+                catch (Exception cex)
+                {
+                    // Never fail the whole install because columns couldn't be set up.
+                    MessageBox.Show(
+                        preamble + "\n\n⚠ Bluebeam column setup skipped: " + cex.Message,
+                        AppName,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                using var dlg = new ColumnInstallDialog(AppName, preamble, columnResult);
+                dlg.ShowDialog();
             }
             catch (Exception ex)
             {

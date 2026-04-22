@@ -10,7 +10,7 @@
     <UseWindowsForms>true</UseWindowsForms>
 
     <!-- App metadata -->
-    <Version>2.0.0</Version>
+    <Version>2.2.0</Version>
     <Company>Texas Accessibility Solutions</Company>
     <Product>TABS Portal Helper</Product>
     <Description>Background helper for TABS Portal PWA — opens Drive files in Bluebeam Revu</Description>

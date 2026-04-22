@@ -10,7 +10,7 @@ namespace TabsPortalHelper
     {
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
-        const string Version = "2.0.0";
+        const string Version = "2.2.0";
         const int HttpPort = 52874;
 
         public TrayApp()
@@ -108,39 +108,11 @@ namespace TabsPortalHelper
                 return;
             }
 
-            string msg;
-            MessageBoxIcon icon;
-            switch (result.Status)
-            {
-                case ColumnInstaller.InstallStatus.Installed:
-                    msg = $"TABS columns installed in {result.TouchedFiles.Count} Bluebeam profile(s).\n\n" +
-                          "A .tabsbackup sidecar of the original was saved alongside each modified profile.";
-                    icon = MessageBoxIcon.Information;
-                    break;
-                case ColumnInstaller.InstallStatus.NotNeeded:
-                    msg = "TABS columns are already set up in Bluebeam. No changes needed.";
-                    icon = MessageBoxIcon.Information;
-                    break;
-                case ColumnInstaller.InstallStatus.BluebeamRunning:
-                    msg = "Bluebeam Revu is currently running.\n\nPlease close Bluebeam completely and try again.";
-                    icon = MessageBoxIcon.Warning;
-                    break;
-                case ColumnInstaller.InstallStatus.NoProfileFound:
-                    msg = "No Bluebeam Revu profile was found for version 21, 2024, or 2025.\n\n" +
-                          "Launch Bluebeam once to let it create a default profile, then try again.";
-                    icon = MessageBoxIcon.Warning;
-                    break;
-                case ColumnInstaller.InstallStatus.ConflictDetected:
-                    msg = "Cannot install TABS columns automatically:\n\n" + result.Message +
-                          "\n\nContact support if you need help resolving the conflict.";
-                    icon = MessageBoxIcon.Warning;
-                    break;
-                default:
-                    msg = "TABS column setup failed:\n\n" + (result.Message ?? "unknown error");
-                    icon = MessageBoxIcon.Error;
-                    break;
-            }
-            MessageBox.Show(msg, "TABS — Bluebeam Columns", MessageBoxButtons.OK, icon);
+            using var dlg = new ColumnInstallDialog(
+                "TABS — Bluebeam Columns",
+                preamble: string.Empty,
+                result);
+            dlg.ShowDialog();
         }
 
         void PromptUninstall()
