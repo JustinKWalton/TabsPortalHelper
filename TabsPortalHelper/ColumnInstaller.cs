@@ -166,8 +166,17 @@ namespace TabsPortalHelper
         {
             conflictMessage = null;
 
-            var doc = new XmlDocument { PreserveWhitespace = false };
+            // CRITICAL: PreserveWhitespace = true is required. Bluebeam's profile
+            // loader is sensitive to formatting of records we don't touch; if we
+            // re-serialize the entire document with different indentation, empty-
+            // element normalization, etc., Bluebeam can fail to render PDFs.
+            // With PreserveWhitespace = true + doc.Save() (no XmlWriterSettings),
+            // .NET writes nodes as loaded — only the nodes we actually modify differ.
+            var doc = new XmlDocument { PreserveWhitespace = true };
             doc.Load(bpxPath);
+
+            // Detect BOM so we can match the original file's encoding on write.
+            bool hadBom = FileStartsWithUtf8Bom(bpxPath);
 
             var markupList = doc.SelectSingleNode("//Record[@Key='MarkupList']");
             if (markupList == null)
@@ -187,16 +196,18 @@ namespace TabsPortalHelper
             var existingByIndex = new Dictionary<int, XmlNode>();
             foreach (XmlNode n in customColumns.SelectNodes("BSIColumnItem"))
             {
-                var name = n.SelectSingleNode("n")?.InnerText ?? "";
+                var name = n.SelectSingleNode("Name")?.InnerText ?? "";
                 if (!string.IsNullOrEmpty(name)) existingByName[name] = n;
 
                 if (int.TryParse(n.Attributes?["Index"]?.Value, out var idx))
                     existingByIndex[idx] = n;
             }
 
-            // Short-circuit: all canonical columns already exist.
-            if (TabsColumns.All(c => existingByName.ContainsKey(c.Name)))
-                return false;
+            // NOTE: we no longer short-circuit when all canonical columns exist.
+            // Even when all BSIColumnItems are already present, we still want to
+            // enforce the canonical DisplayOrder below (Location, Subject, Element,
+            // Comment Status, Page, Note, Comments) — that's the TABS workflow's
+            // preferred left-to-right order in the Markups List.
 
             bool changed = false;
             foreach (var spec in TabsColumns)
@@ -207,7 +218,7 @@ namespace TabsPortalHelper
                 // Refuse to clobber a different column that already occupies our slot.
                 if (existingByIndex.TryGetValue(spec.Index, out var occupant))
                 {
-                    var occName = occupant.SelectSingleNode("n")?.InnerText ?? "(unnamed)";
+                    var occName = occupant.SelectSingleNode("Name")?.InnerText ?? "(unnamed)";
                     conflictMessage = $"Index {spec.Index} is occupied by existing column '{occName}' — refusing to overwrite to add '{spec.Name}'";
                     return false;
                 }
@@ -218,27 +229,34 @@ namespace TabsPortalHelper
                 // Ensure the matching <Column Key="UserDefinedN"> entry exists and is visible.
                 EnsureUserDefinedColumn(doc, columnsBlock, spec);
 
-                // Ensure the column appears in <DisplayOrder>.
-                EnsureDisplayOrderEntry(doc, displayOrder, $"UserDefined{spec.Index}");
+                // DisplayOrder is rebuilt holistically below, no need to append here.
 
                 changed = true;
             }
 
-            if (changed)
+            // Enforce canonical DisplayOrder: Location, Subject, Element,
+            // Comment Status, Page, Note, Comments. Any other column keys already
+            // in DisplayOrder (e.g. user-added Author/Date/Color) are preserved
+            // and follow our canonical block.
+            bool orderChanged = EnforceCanonicalDisplayOrder(doc, displayOrder);
+
+            if (changed || orderChanged)
             {
                 // Write atomically: temp file, then move. Preserves file on failure.
                 var tmp = bpxPath + ".tabstmp";
-                var settings = new XmlWriterSettings
+
+                // DO NOT use XmlWriterSettings with Indent — that re-formats the
+                // entire document and has been observed to break Bluebeam's PDF
+                // rendering. Save via StreamWriter with explicit encoding so we
+                // (a) match the original BOM state and (b) let XmlDocument's own
+                // serializer respect PreserveWhitespace = true.
+                var enc = new UTF8Encoding(encoderShouldEmitUTF8Identifier: hadBom);
+                using (var fs = new FileStream(tmp, FileMode.Create, FileAccess.Write))
+                using (var sw = new StreamWriter(fs, enc))
                 {
-                    Indent = true,
-                    IndentChars = "  ",
-                    Encoding = new UTF8Encoding(false), // no BOM — Bluebeam doesn't emit one
-                    OmitXmlDeclaration = false
-                };
-                using (var writer = XmlWriter.Create(tmp, settings))
-                {
-                    doc.Save(writer);
+                    doc.Save(sw);
                 }
+
                 // Backup once (first time we touch the file) then replace.
                 var backup = bpxPath + ".tabsbackup";
                 if (!File.Exists(backup))
@@ -246,7 +264,96 @@ namespace TabsPortalHelper
                 File.Delete(bpxPath);
                 File.Move(tmp, bpxPath);
             }
-            return changed;
+            return changed || orderChanged;
+        }
+
+        /// <summary>
+        /// Enforces the canonical TABS display order at the beginning of the
+        /// DisplayOrder block. Any existing entries for canonical keys are removed
+        /// and re-inserted in canonical order. Non-canonical entries (e.g.
+        /// user-added Author/Date/Color) are preserved and follow the canonical
+        /// block. Returns true if DisplayOrder was modified.
+        /// </summary>
+        private static bool EnforceCanonicalDisplayOrder(XmlDocument doc, XmlNode displayOrder)
+        {
+            // Left-to-right order in the Markups List:
+            //   Location, Subject, Element, Comment Status, Page, Note, Comments
+            var canonicalKeys = new[]
+            {
+                "UserDefined3",   // Location
+                "Subject",        // (built-in)
+                "UserDefined2",   // Element
+                "UserDefined1",   // Comment Status
+                "Page",           // (built-in)
+                "UserDefined0",   // Note
+                "Comments",       // (built-in)
+            };
+
+            // Collect current keys in DisplayOrder, in order.
+            var currentKeys = displayOrder.SelectNodes("Column")
+                .Cast<XmlNode>()
+                .Select(n => n.Attributes?["Key"]?.Value ?? "")
+                .ToList();
+
+            // Fast path: first N entries already match our canonical order.
+            bool alreadyCanonical = currentKeys.Count >= canonicalKeys.Length;
+            if (alreadyCanonical)
+            {
+                for (int i = 0; i < canonicalKeys.Length; i++)
+                {
+                    if (currentKeys[i] != canonicalKeys[i]) { alreadyCanonical = false; break; }
+                }
+            }
+            if (alreadyCanonical) return false;
+
+            // Remove every existing <Column> whose Key matches a canonical entry,
+            // from wherever it currently sits in DisplayOrder.
+            var canonicalSet = new HashSet<string>(canonicalKeys, StringComparer.Ordinal);
+            var toRemove = displayOrder.SelectNodes("Column")
+                .Cast<XmlNode>()
+                .Where(n => canonicalSet.Contains(n.Attributes?["Key"]?.Value ?? ""))
+                .ToList();
+            foreach (var node in toRemove)
+                displayOrder.RemoveChild(node);
+
+            // Re-insert canonical keys at the beginning, preserving the requested
+            // left-to-right order. Any remaining non-canonical entries stay where
+            // they were (which is now after our canonical block).
+            XmlNode anchor = null;
+            foreach (var key in canonicalKeys)
+            {
+                var col = doc.CreateElement("Column");
+                col.SetAttribute("Key", key);
+                if (anchor == null)
+                {
+                    if (displayOrder.FirstChild != null)
+                        displayOrder.InsertBefore(col, displayOrder.FirstChild);
+                    else
+                        displayOrder.AppendChild(col);
+                }
+                else
+                {
+                    displayOrder.InsertAfter(col, anchor);
+                }
+                anchor = col;
+            }
+            return true;
+        }
+
+        /// <summary>True if the file starts with the UTF-8 BOM (EF BB BF).</summary>
+        private static bool FileStartsWithUtf8Bom(string path)
+        {
+            try
+            {
+                using var fs = File.OpenRead(path);
+                Span<byte> buf = stackalloc byte[3];
+                int read = fs.Read(buf);
+                return read == 3 && buf[0] == 0xEF && buf[1] == 0xBB && buf[2] == 0xBF;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private static XmlElement BuildColumnItem(XmlDocument doc, ColumnSpec spec)
@@ -255,7 +362,10 @@ namespace TabsPortalHelper
             item.SetAttribute("Index", spec.Index.ToString());
             item.SetAttribute("Subtype", spec.Subtype);
 
-            AppendText(doc, item, "n", spec.Name);
+            // Bluebeam uses the tag name "Name" for the column display name.
+            // (Was previously "n" based on bad recon — that caused a
+            // NullReferenceException inside Bluebeam when rendering PDFs.)
+            AppendText(doc, item, "Name", spec.Name);
             AppendText(doc, item, "DisplayOrder", spec.Index.ToString());
             AppendText(doc, item, "Deleted", "False");
 
@@ -310,18 +420,6 @@ namespace TabsPortalHelper
                 if (existing.SelectSingleNode("Width") == null)
                     AppendText(doc, existing, "Width", spec.Width.ToString());
             }
-        }
-
-        private static void EnsureDisplayOrderEntry(XmlDocument doc, XmlNode displayOrder, string columnKey)
-        {
-            var present = displayOrder.SelectNodes("Column")
-                .Cast<XmlNode>()
-                .Any(n => n.Attributes?["Key"]?.Value == columnKey);
-            if (present) return;
-
-            var col = doc.CreateElement("Column");
-            col.SetAttribute("Key", columnKey);
-            displayOrder.AppendChild(col);
         }
 
         private static void AppendText(XmlDocument doc, XmlNode parent, string elementName, string value)
