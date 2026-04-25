@@ -14,7 +14,7 @@ namespace TabsPortalHelper
         private readonly int _port;
         private HttpListener? _listener;
         private CancellationTokenSource? _cts;
-        const string Version = "2.2.0";
+        const string Version = "2.3.0";
 
         public HttpServer(int port)
         {

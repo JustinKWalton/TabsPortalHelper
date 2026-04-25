@@ -10,7 +10,7 @@ namespace TabsPortalHelper
     {
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
-        const string Version = "2.2.0";
+        const string Version = "2.3.0";
         const int HttpPort = 52874;
 
         public TrayApp()
@@ -37,9 +37,9 @@ namespace TabsPortalHelper
             reinstallItem.Click += (s, e) => Installer.RegisterStartup();
             menu.Items.Add(reinstallItem);
 
-            var columnsItem = new ToolStripMenuItem("Install Bluebeam Columns...");
-            columnsItem.Click += (s, e) => InstallBluebeamColumns();
-            menu.Items.Add(columnsItem);
+            var profileItem = new ToolStripMenuItem("Install Bluebeam Profile...");
+            profileItem.Click += (s, e) => InstallBluebeamProfile();
+            menu.Items.Add(profileItem);
 
             menu.Items.Add(new ToolStripSeparator());
 
@@ -91,25 +91,25 @@ namespace TabsPortalHelper
                 MessageBoxIcon.Information);
         }
 
-        void InstallBluebeamColumns()
+        void InstallBluebeamProfile()
         {
-            ColumnInstaller.InstallResult result;
+            ProfileInstaller.InstallResult result;
             try
             {
-                result = ColumnInstaller.CheckAndInstall();
+                result = ProfileInstaller.CheckAndInstall();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Unexpected error while setting up Bluebeam columns:\n\n" + ex.Message,
-                    "TABS — Bluebeam Columns",
+                    "Unexpected error while installing the Bluebeam profile:\n\n" + ex.Message,
+                    "TABS — Bluebeam Profile",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
-            using var dlg = new ColumnInstallDialog(
-                "TABS — Bluebeam Columns",
+            using var dlg = new ProfileInstallDialog(
+                "TABS — Bluebeam Profile",
                 preamble: string.Empty,
                 result);
             dlg.ShowDialog();

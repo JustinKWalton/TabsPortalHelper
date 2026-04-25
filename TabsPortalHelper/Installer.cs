@@ -10,7 +10,7 @@ namespace TabsPortalHelper
     static class Installer
     {
         const string AppName = "TABS Portal Helper";
-        const string AppVersion = "2.2.0";
+        const string AppVersion = "2.3.0";
         const string UninstallRegKey = @"Software\Microsoft\Windows\CurrentVersion\Uninstall\TabsPortalHelper";
         const string StartupRegKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
         const string TabsRegKey = @"Software\TabsPortalHelper";
@@ -38,7 +38,7 @@ namespace TabsPortalHelper
                 LaunchTrayApp();
 
                 // The install-success preamble shown in the dialog's upper portion.
-                // The column-status line is appended/swapped by ColumnInstallDialog itself.
+                // The profile-status line is appended by ProfileInstallDialog itself.
                 string preamble =
                     $"{AppName} v{AppVersion} installed successfully!\n\n" +
                     $"The helper is now running in your system tray (look for the TABS icon " +
@@ -46,25 +46,26 @@ namespace TabsPortalHelper
                     $"If you downloaded an installer file, that download can now be deleted — " +
                     $"the helper has been copied to its permanent location." + driveMsg;
 
-                // Bluebeam custom columns: idempotent. If Bluebeam is running, the dialog
-                // gates on the user closing it and clicking Retry to complete setup.
-                ColumnInstaller.InstallResult columnResult;
+                // TABSportal Bluebeam profile: idempotent. Works whether Revu is
+                // running or not — if running, columns update live; if not,
+                // Revu launches momentarily to apply the change.
+                ProfileInstaller.InstallResult profileResult;
                 try
                 {
-                    columnResult = ColumnInstaller.CheckAndInstall();
+                    profileResult = ProfileInstaller.CheckAndInstall();
                 }
                 catch (Exception cex)
                 {
-                    // Never fail the whole install because columns couldn't be set up.
+                    // Never fail the whole install because profile setup hit an error.
                     MessageBox.Show(
-                        preamble + "\n\n⚠ Bluebeam column setup skipped: " + cex.Message,
+                        preamble + "\n\n⚠ Bluebeam profile setup skipped: " + cex.Message,
                         AppName,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                     return;
                 }
 
-                using var dlg = new ColumnInstallDialog(AppName, preamble, columnResult);
+                using var dlg = new ProfileInstallDialog(AppName, preamble, profileResult);
                 dlg.ShowDialog();
             }
             catch (Exception ex)

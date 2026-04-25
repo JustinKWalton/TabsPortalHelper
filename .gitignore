@@ -430,3 +430,7 @@ FodyWeavers.xsd
 
 # Backup files
 *.bak
+
+
+# Reverse-engineering scratchpad — don't ship
+TabsPortalHelper/Markup_Extract/

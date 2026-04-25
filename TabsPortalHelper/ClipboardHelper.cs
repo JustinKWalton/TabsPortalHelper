@@ -14,13 +14,13 @@ namespace TabsPortalHelper
     /// format name "Bluebeam.Windows.View.Input.BBCopyItem", so Ctrl+V
     /// inside Bluebeam Revu pastes a live, editable annotation.
     ///
-    /// BSI column mapping (MUST match the ColumnInstaller canonical schema
+    /// BSI column mapping (MUST match the TABSportal.bpx profile's UserDefined column ordering
     /// and the generate-markup-summary edge function's extractMarkups):
     ///     BSI[0] = user Note     (the text in the "Note" column)
     ///     BSI[1] = Comment Status
     ///     BSI[2] = Element       (aka ItemCategory)
     ///     BSI[3] = Location
-    /// DO NOT reorder these without updating both ColumnInstaller.TabsColumns
+    /// DO NOT reorder these without updating both TABSportal.bpx
     /// and the edge function's bsiStrs[0..3] mapping.
     /// </summary>
     static class ClipboardHelper
@@ -186,7 +186,7 @@ namespace TabsPortalHelper
             string rcHtml = req.RcHtml ?? BuildXhtmlFromPlainText(contents);
 
             pdfDict = ReplacePdfLiteralString(pdfDict, "/Subj", subject);
-            // BSI column order is contractual — MUST match ColumnInstaller's TabsColumns
+            // BSI column order is contractual -- MUST match TABSportal.bpx UserDefined[0..3]
             // and the edge function's extractMarkups bsiStrs[0..3] mapping.
             pdfDict = ReplaceBsiColumnData(pdfDict,
                 note:     note,         // BSI[0]

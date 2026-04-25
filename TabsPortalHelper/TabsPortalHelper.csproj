@@ -10,7 +10,7 @@
     <UseWindowsForms>true</UseWindowsForms>
 
     <!-- App metadata -->
-    <Version>2.2.0</Version>
+    <Version>2.3.0</Version>
     <Company>Texas Accessibility Solutions</Company>
     <Product>TABS Portal Helper</Product>
     <Description>Background helper for TABS Portal PWA — opens Drive files in Bluebeam Revu</Description>
@@ -36,10 +36,16 @@
     <EmbeddedResource Include="tray.ico" />
   </ItemGroup>
 
-<ItemGroup>
-  <EmbeddedResource Include="template.bin">
-    <LogicalName>TabsPortalHelper.template.bin</LogicalName>
-  </EmbeddedResource>
-</ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="template.bin">
+      <LogicalName>TabsPortalHelper.template.bin</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TABSportal.bpx">
+      <LogicalName>TabsPortalHelper.TABSportal.bpx</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
 
 </Project>
