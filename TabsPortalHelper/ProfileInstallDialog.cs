@@ -8,8 +8,8 @@ namespace TabsPortalHelper
     /// Post-install / tray-menu dialog for TABSportal profile installation.
     ///
     /// Much simpler than the v2.2 ColumnInstallDialog — no retry loop, because
-    /// Revu.exe /bpximport /bpxactive works whether Bluebeam is running or
-    /// not. Single OK button, three possible states.
+    /// Revu.exe /s /bpximport /bpxactive works whether Bluebeam is running
+    /// or not. Single OK button, three possible states.
     ///
     /// Called from:
     ///   • Installer.Install()               — preamble = install success text
@@ -31,7 +31,7 @@ namespace TabsPortalHelper
             MinimizeBox     = false;
             ShowInTaskbar   = false;
             StartPosition   = FormStartPosition.CenterScreen;
-            ClientSize      = hasPreamble ? new Size(520, 340) : new Size(480, 200);
+            ClientSize      = hasPreamble ? new Size(520, 340) : new Size(480, 220);
 
             const int Pad  = 16;
             const int BtnW = 100;
@@ -82,9 +82,10 @@ namespace TabsPortalHelper
             {
                 ProfileInstaller.InstallStatus.Installed =>
                     "\u2713 TABSportal Bluebeam profile installed.\r\n\r\n" +
-                    "Bluebeam has been told to import the profile and switch to it. " +
-                    "If Bluebeam is already running, the columns update live; " +
-                    "otherwise Bluebeam will launch momentarily to apply the change.",
+                    "TABSportal is now your active Bluebeam profile and Bluebeam " +
+                    "is open. Your existing profiles are untouched \u2014 " +
+                    "TABSportal is added alongside them, and you can switch back " +
+                    "any time from Revu \u2192 Profiles.",
 
                 ProfileInstaller.InstallStatus.NoRevuFound =>
                     "\u26A0 Bluebeam Revu was not found on this computer.\r\n\r\n" +
@@ -96,7 +97,7 @@ namespace TabsPortalHelper
                     (r.Message ?? "unknown error"),
 
                 _ =>
-                    "\u26A0 Profile setup: " + r.Status + " — " + (r.Message ?? ""),
+                    "\u26A0 Profile setup: " + r.Status + " \u2014 " + (r.Message ?? ""),
             };
 
             return preamble.Length == 0 ? body : preamble + "\r\n\r\n" + body;

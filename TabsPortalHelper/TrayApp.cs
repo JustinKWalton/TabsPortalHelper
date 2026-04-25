@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -15,10 +15,10 @@ namespace TabsPortalHelper
 
         public TrayApp()
         {
-            // ── Load tray icon from embedded resource ────────────────────────────
+            // â”€â”€ Load tray icon from embedded resource â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             var icon = LoadEmbeddedIcon();
 
-            // ── Build context menu ───────────────────────────────────────────────
+            // â”€â”€ Build context menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             var menu = new ContextMenuStrip();
 
             var header = new ToolStripMenuItem("TABS Portal Helper  v" + Version)
@@ -53,7 +53,7 @@ namespace TabsPortalHelper
             exitItem.Click += (s, e) => ExitApp();
             menu.Items.Add(exitItem);
 
-            // ── Create tray icon ─────────────────────────────────────────────────
+            // â”€â”€ Create tray icon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             _trayIcon = new NotifyIcon
             {
                 Icon = icon,
@@ -64,15 +64,15 @@ namespace TabsPortalHelper
 
             _trayIcon.DoubleClick += (s, e) => ShowStatus();
 
-            // ── Start HTTP server ────────────────────────────────────────────────
+            // â”€â”€ Start HTTP server â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             _server = new HttpServer(HttpPort);
             _server.Start();
 
-            // ── Show startup balloon ─────────────────────────────────────────────
+            // â”€â”€ Show startup balloon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             _trayIcon.ShowBalloonTip(
                 3000,
                 "TABS Portal Helper",
-                $"Running on port {HttpPort} — ready to open files in Bluebeam.",
+                $"Running on port {HttpPort} \u2014 ready to open files in Bluebeam.",
                 ToolTipIcon.Info);
         }
 
@@ -83,16 +83,31 @@ namespace TabsPortalHelper
 
             MessageBox.Show(
                 $"TABS Portal Helper  v{Version}\n\n" +
-                $"HTTP Server:  localhost:{HttpPort}  ✓\n\n" +
-                $"Google Drive:  {driveRoot ?? "⚠ Not detected"}\n\n" +
-                $"Bluebeam Revu:  {bluebeam ?? "⚠ Not found"}",
-                "TABS Portal Helper — Status",
+                $"HTTP Server:  localhost:{HttpPort}  âœ“\n\n" +
+                $"Google Drive:  {driveRoot ?? "âš  Not detected"}\n\n" +
+                $"Bluebeam Revu:  {bluebeam ?? "âš  Not found"}",
+                "TABS Portal Helper â€” Status",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
 
         void InstallBluebeamProfile()
         {
+            var confirm = MessageBox.Show(
+                "About to install the TABSportal Bluebeam profile.\n\n" +
+                "This adds a new profile alongside your existing Bluebeam profiles \u2014 " +
+                "your current profiles will not be modified. After install, Bluebeam will " +
+                "open with TABSportal as the active profile. You can switch back to any " +
+                "other profile any time via Revu \u2192 Profiles.\n\n" +
+                "Continue?",
+                "TABS \u2014 Install Bluebeam Profile",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
             ProfileInstaller.InstallResult result;
             try
             {
@@ -102,14 +117,14 @@ namespace TabsPortalHelper
             {
                 MessageBox.Show(
                     "Unexpected error while installing the Bluebeam profile:\n\n" + ex.Message,
-                    "TABS — Bluebeam Profile",
+                    "TABS â€” Bluebeam Profile",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
             using var dlg = new ProfileInstallDialog(
-                "TABS — Bluebeam Profile",
+                "TABS â€” Bluebeam Profile",
                 preamble: string.Empty,
                 result);
             dlg.ShowDialog();

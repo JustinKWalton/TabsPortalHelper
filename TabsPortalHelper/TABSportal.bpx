@@ -21,35 +21,35 @@
     </Columns>
   </Record>
   <Record Key="MarkupList">
-    <ActiveColumn>0</ActiveColumn>
+    <ActiveColumn>3</ActiveColumn>
     <Columns>
-      <Column Key="UserDefined3">
-        <Width>249</Width>
-        <Visible>True</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Subject">
-        <Width>285</Width>
-        <Visible>True</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="UserDefined2">
-        <Width>118</Width>
+      <Column Key="UserDefined0">
+        <Width>268</Width>
         <Visible>True</Visible>
         <Added>True</Added>
       </Column>
       <Column Key="UserDefined1">
-        <Width>160</Width>
+        <Width>264</Width>
+        <Visible>True</Visible>
+        <Added>True</Added>
+      </Column>
+      <Column Key="UserDefined2">
+        <Width>336</Width>
+        <Visible>True</Visible>
+        <Added>True</Added>
+      </Column>
+      <Column Key="UserDefined3">
+        <Width>174</Width>
         <Visible>True</Visible>
         <Added>True</Added>
       </Column>
       <Column Key="Page">
-        <Width>126</Width>
+        <Width>132</Width>
         <Visible>True</Visible>
         <Added>True</Added>
       </Column>
-      <Column Key="UserDefined0">
-        <Width>568</Width>
+      <Column Key="UserDefined4">
+        <Width>452</Width>
         <Visible>True</Visible>
         <Added>True</Added>
       </Column>
@@ -58,163 +58,78 @@
         <Visible>True</Visible>
         <Added>True</Added>
       </Column>
+      <Column Key="Subject">
+        <Width>284</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
       <Column Key="Page Index">
         <Width>96</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
       <Column Key="Lock">
         <Width>76</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Checkmark">
-        <Width>84</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Author">
-        <Width>92</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Date">
-        <Width>124</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Creation Date">
-        <Width>160</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="X">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Y">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Width">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Height">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Length">
-        <Width>80</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Area">
-        <Width>80</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Wall Area">
-        <Width>80</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Volume">
-        <Width>80</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Count">
-        <Width>80</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Measurement">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Label">
-        <Width>80</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Sequence">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Capture">
-        <Width>100</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Depth">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
       <Column Key="Status">
         <Width>124</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="Color">
+      <Column Key="GoCanvasStatus">
         <Width>80</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="Layer">
-        <Width>120</Width>
+      <Column Key="Checkmark">
+        <Width>84</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="Legend">
-        <Width>120</Width>
+      <Column Key="Author">
+        <Width>92</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="Measurement Height">
+      <Column Key="Date">
+        <Width>124</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Creation Date">
+        <Width>160</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Depth">
         <Width>48</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="Measurement Width">
-        <Width>48</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
       <Column Key="RiseDrop">
         <Width>48</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
       <Column Key="Slope">
         <Width>48</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="Space">
-        <Width>100</Width>
+      <Column Key="Color">
+        <Width>80</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="Units">
+      <Column Key="X">
         <Width>48</Width>
         <Visible>False</Visible>
-        <Added>True</Added>
+        <Added>False</Added>
       </Column>
-      <Column Key="View3D">
-        <Width>100</Width>
-        <Visible>False</Visible>
-        <Added>True</Added>
-      </Column>
-      <Column Key="GoCanvasStatus">
-        <Width>80</Width>
+      <Column Key="Y">
+        <Width>48</Width>
         <Visible>False</Visible>
         <Added>False</Added>
       </Column>
@@ -228,84 +143,135 @@
         <Visible>False</Visible>
         <Added>False</Added>
       </Column>
+      <Column Key="Width">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Height">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Length">
+        <Width>80</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Measurement Width">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Measurement Height">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Area">
+        <Width>80</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Wall Area">
+        <Width>80</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Volume">
+        <Width>80</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Count">
+        <Width>80</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Measurement">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Units">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Label">
+        <Width>80</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Sequence">
+        <Width>48</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="View3D">
+        <Width>100</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Layer">
+        <Width>120</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Legend">
+        <Width>120</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Space">
+        <Width>100</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
+      <Column Key="Capture">
+        <Width>100</Width>
+        <Visible>False</Visible>
+        <Added>False</Added>
+      </Column>
     </Columns>
     <DisplayOrder>
-      <Column Key="UserDefined3" />
-      <Column Key="Subject" />
-      <Column Key="UserDefined2" />
-      <Column Key="UserDefined1" />
-      <Column Key="Page" />
       <Column Key="UserDefined0" />
+      <Column Key="UserDefined1" />
+      <Column Key="UserDefined2" />
+      <Column Key="UserDefined3" />
+      <Column Key="Page" />
+      <Column Key="UserDefined4" />
       <Column Key="Comments" />
-      <Column Key="Page Index" />
-      <Column Key="Lock" />
-      <Column Key="Checkmark" />
-      <Column Key="Author" />
-      <Column Key="Date" />
-      <Column Key="Creation Date" />
-      <Column Key="X" />
-      <Column Key="Y" />
-      <Column Key="Width" />
-      <Column Key="Height" />
-      <Column Key="Length" />
-      <Column Key="Area" />
-      <Column Key="Wall Area" />
-      <Column Key="Volume" />
-      <Column Key="Count" />
-      <Column Key="Measurement" />
-      <Column Key="Label" />
-      <Column Key="Sequence" />
-      <Column Key="Capture" />
-      <Column Key="Depth" />
-      <Column Key="Status" />
-      <Column Key="Color" />
-      <Column Key="Layer" />
-      <Column Key="Legend" />
-      <Column Key="Measurement Height" />
-      <Column Key="Measurement Width" />
-      <Column Key="RiseDrop" />
-      <Column Key="Slope" />
-      <Column Key="Space" />
-      <Column Key="Units" />
-      <Column Key="View3D" />
     </DisplayOrder>
     <CustomColumns>
       <BSIColumnItem Index="0" Subtype="Text">
         <Name>Note</Name>
-        <DisplayOrder>0</DisplayOrder>
+        <DisplayOrder>4</DisplayOrder>
         <Deleted>False</Deleted>
         <Multiline>False</Multiline>
       </BSIColumnItem>
-      <BSIColumnItem Index="1" Subtype="Choice">
+      <BSIColumnItem Index="1" Subtype="Text">
         <Name>Comment Status</Name>
-        <DisplayOrder>1</DisplayOrder>
+        <DisplayOrder>3</DisplayOrder>
         <DefaultValue>Not Acceptable</DefaultValue>
         <Deleted>False</Deleted>
-        <Format>Normal</Format>
-        <Precision>2</Precision>
-        <Items>
-          <Item Index="0">
-            <Value>Not Acceptable</Value>
-            <Default>True</Default>
-          </Item>
-          <Item Index="1">
-            <Value>Could Not Verify</Value>
-          </Item>
-          <Item Index="2">
-            <Value>Area of Concern</Value>
-          </Item>
-        </Items>
-        <AllowCustom>False</AllowCustom>
+        <Multiline>False</Multiline>
       </BSIColumnItem>
       <BSIColumnItem Index="2" Subtype="Text">
         <Name>Element</Name>
-        <DisplayOrder>2</DisplayOrder>
+        <DisplayOrder>1</DisplayOrder>
         <Deleted>False</Deleted>
         <Multiline>False</Multiline>
       </BSIColumnItem>
       <BSIColumnItem Index="3" Subtype="Text">
         <Name>Location</Name>
-        <DisplayOrder>3</DisplayOrder>
+        <DisplayOrder>0</DisplayOrder>
+        <Deleted>False</Deleted>
+        <Multiline>False</Multiline>
+      </BSIColumnItem>
+      <BSIColumnItem Index="4" Subtype="Text">
+        <Name>Issue</Name>
+        <DisplayOrder>2</DisplayOrder>
         <Deleted>False</Deleted>
         <Multiline>False</Multiline>
       </BSIColumnItem>
@@ -387,346 +353,6 @@
       <Title>Standard</Title>
       <Path>Standard.bhx</Path>
       <Hidden>False</Hidden>
-      <BluebeamRevuHatchSet Version="1">
-        <Title>789c0b2e49cc4b492c4a01000e330332</Title>
-        <Hatch Name="Brick">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="-0.05555556" Y1="1" X2="1.055556" Y2="1" />
-          <Element Type="Line" X1="0.5" Y1="1" X2="0.5" Y2="0.5" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.5" X2="1.055556" Y2="0.5" />
-          <Element Type="Line" X1="0" Y1="0.5" X2="0" Y2="0" />
-          <Element Type="Line" X1="-0.05555556" Y1="0" X2="1.055556" Y2="0" />
-          <Element Type="Line" X1="1" Y1="0" X2="1" Y2="0.5" />
-        </Hatch>
-        <Hatch Name="Diagonal Brick">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="-0.05555556" Y1="-0.05555556" X2="1.055556" Y2="1.055556" />
-          <Element Type="Line" X1="0.5" Y1="0.5" X2="0" Y2="1" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.9444444" X2="0.05555556" Y2="1.055556" />
-          <Element Type="Line" X1="0.9444444" Y1="-0.05555556" X2="1.055556" Y2="0.05555556" />
-        </Hatch>
-        <Hatch Name="Horizontal">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="-0.05555556" Y1="0.75" X2="1.055556" Y2="0.75" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.25" X2="1.055556" Y2="0.25" />
-        </Hatch>
-        <Hatch Name="Vertical">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="0.25" Y1="1.055556" X2="0.25" Y2="-0.05555556" />
-          <Element Type="Line" X1="0.75" Y1="1.055556" X2="0.75" Y2="-0.05555556" />
-        </Hatch>
-        <Hatch Name="Diagonal Down">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="-0.05555556" Y1="1.055556" X2="1.055556" Y2="-0.05555556" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.05555556" X2="0.05555556" Y2="-0.05555556" />
-          <Element Type="Line" X1="0.9444444" Y1="1.055556" X2="1.055556" Y2="0.9444444" />
-        </Hatch>
-        <Hatch Name="Diagonal Up">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="-0.05555556" Y1="0.9444444" X2="0.05555556" Y2="1.055556" />
-          <Element Type="Line" X1="-0.05555556" Y1="-0.05555556" X2="1.055556" Y2="1.055556" />
-          <Element Type="Line" X1="0.9444444" Y1="-0.05555556" X2="1.055556" Y2="0.05555556" />
-        </Hatch>
-        <Hatch Name="Grid">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="0.25" Y1="1.055556" X2="0.25" Y2="-0.05555556" />
-          <Element Type="Line" X1="0.75" Y1="1.055556" X2="0.75" Y2="-0.05555556" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.75" X2="1.055556" Y2="0.75" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.25" X2="1.055556" Y2="0.25" />
-        </Hatch>
-        <Hatch Name="Weave">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Line" X1="-0.05555556" Y1="1.055556" X2="0.25" Y2="0.75" />
-          <Element Type="Line" X1="-0.05555556" Y1="0.4444444" X2="0.5555556" Y2="1.055556" />
-          <Element Type="Line" X1="0.4444444" Y1="1.055556" X2="1.055556" Y2="0.4444444" />
-          <Element Type="Line" X1="0.9444444" Y1="1.055556" X2="1.055556" Y2="0.9444444" />
-          <Element Type="Line" X1="-0.05555556" Y1="-0.05555556" X2="0.75" Y2="0.75" />
-          <Element Type="Line" X1="0.25" Y1="0.25" X2="0.5555556" Y2="-0.05555556" />
-          <Element Type="Line" X1="0.5" Y1="0.5" X2="1.055556" Y2="-0.05555556" />
-          <Element Type="Line" X1="1" Y1="0.5" X2="0.75" Y2="0.25" />
-        </Hatch>
-        <Hatch Name="10% Dots">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Dot" X="0" Y="0" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="1" Size="Small" />
-          <Element Type="Dot" X="1" Y="0" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="1" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.125" Y="0.125" Size="Small" />
-          <Element Type="Dot" X="0.125" Y="0.375" Size="Small" />
-          <Element Type="Dot" X="0.125" Y="0.625" Size="Small" />
-          <Element Type="Dot" X="0.125" Y="0.875" Size="Small" />
-          <Element Type="Dot" X="0.375" Y="0.125" Size="Small" />
-          <Element Type="Dot" X="0.375" Y="0.375" Size="Small" />
-          <Element Type="Dot" X="0.375" Y="0.625" Size="Small" />
-          <Element Type="Dot" X="0.375" Y="0.875" Size="Small" />
-          <Element Type="Dot" X="0.625" Y="0.125" Size="Small" />
-          <Element Type="Dot" X="0.625" Y="0.375" Size="Small" />
-          <Element Type="Dot" X="0.625" Y="0.625" Size="Small" />
-          <Element Type="Dot" X="0.625" Y="0.875" Size="Small" />
-          <Element Type="Dot" X="0.875" Y="0.125" Size="Small" />
-          <Element Type="Dot" X="0.875" Y="0.375" Size="Small" />
-          <Element Type="Dot" X="0.875" Y="0.625" Size="Small" />
-          <Element Type="Dot" X="0.875" Y="0.875" Size="Small" />
-        </Hatch>
-        <Hatch Name="20% Dots">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Dot" X="0" Y="0" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="0" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="0.1666667" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="0.3333333" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="0.6666667" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="0.8333334" Y="1" Size="Small" />
-          <Element Type="Dot" X="1" Y="0" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.1666667" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.3333333" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.6666667" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.8333334" Size="Small" />
-          <Element Type="Dot" X="1" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.08333334" Y="0.08333334" Size="Small" />
-          <Element Type="Dot" X="0.08333334" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.08333334" Y="0.4166667" Size="Small" />
-          <Element Type="Dot" X="0.08333334" Y="0.5833334" Size="Small" />
-          <Element Type="Dot" X="0.08333334" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.08333334" Y="0.9166667" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.08333334" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.4166667" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.5833334" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.25" Y="0.9166667" Size="Small" />
-          <Element Type="Dot" X="0.4166667" Y="0.08333334" Size="Small" />
-          <Element Type="Dot" X="0.4166667" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.4166667" Y="0.4166667" Size="Small" />
-          <Element Type="Dot" X="0.4166667" Y="0.5833334" Size="Small" />
-          <Element Type="Dot" X="0.4166667" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.4166667" Y="0.9166667" Size="Small" />
-          <Element Type="Dot" X="0.5833334" Y="0.08333334" Size="Small" />
-          <Element Type="Dot" X="0.5833334" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.5833334" Y="0.4166667" Size="Small" />
-          <Element Type="Dot" X="0.5833334" Y="0.5833334" Size="Small" />
-          <Element Type="Dot" X="0.5833334" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.5833334" Y="0.9166667" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.08333334" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.4166667" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.5833334" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.75" Y="0.9166667" Size="Small" />
-          <Element Type="Dot" X="0.9166667" Y="0.08333334" Size="Small" />
-          <Element Type="Dot" X="0.9166667" Y="0.25" Size="Small" />
-          <Element Type="Dot" X="0.9166667" Y="0.4166667" Size="Small" />
-          <Element Type="Dot" X="0.9166667" Y="0.5833334" Size="Small" />
-          <Element Type="Dot" X="0.9166667" Y="0.75" Size="Small" />
-          <Element Type="Dot" X="0.9166667" Y="0.9166667" Size="Small" />
-        </Hatch>
-        <Hatch Name="30% Dots">
-          <ScaleX>1</ScaleX>
-          <ScaleY>1</ScaleY>
-          <Size>QuarterInch</Size>
-          <LineWidth>1</LineWidth>
-          <Element Type="Dot" X="0" Y="0" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0.1428571" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0.2857143" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0.4285715" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0.5714286" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0.7142857" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="0.8571429" Y="1" Size="Small" />
-          <Element Type="Dot" X="1" Y="0" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.1428571" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.2857143" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.4285715" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.5714286" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.7142857" Size="Small" />
-          <Element Type="Dot" X="1" Y="0.8571429" Size="Small" />
-          <Element Type="Dot" X="1" Y="1" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.07142857" Y="0.9285715" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.2142857" Y="0.9285715" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.3571429" Y="0.9285715" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.5" Y="0.9285715" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.6428572" Y="0.9285715" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.7857143" Y="0.9285715" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.07142857" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.2142857" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.3571429" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.5" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.6428572" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.7857143" Size="Small" />
-          <Element Type="Dot" X="0.9285715" Y="0.9285715" Size="Small" />
-        </Hatch>
-      </BluebeamRevuHatchSet>
     </HatchSet>
   </Record>
   <Record Key="LineSetManager">
@@ -737,163 +363,6 @@
       <Title>Advanced</Title>
       <Path>Advanced.blx</Path>
       <Hidden>False</Hidden>
-      <BluebeamRevuLineStyleSet Version="1">
-        <Title>789c734c294bcc4b4e4d01000d840317</Title>
-        <LineStyle Name="Fenceline Circle" ScaleWithLineWidth="True">
-          <Line Offset="0">
-            <Component Type="Dash" Index="0" Width="22" />
-            <Component Type="Vector" Index="1" Left="2" Right="2" Scale="1" Fill="False">
-              <Point Type="Start" Index="0" X="0" Y="-2" />
-              <Point Type="Curve" Index="1" X="1.10457" Y="-2" />
-              <Point Type="Curve" Index="2" X="2" Y="-1.10457" />
-              <Point Type="Curve" Index="3" X="2" Y="0" />
-              <Point Type="Curve" Index="4" X="2" Y="1.10457" />
-              <Point Type="Curve" Index="5" X="1.10457" Y="2" />
-              <Point Type="Curve" Index="6" X="0" Y="2" />
-              <Point Type="Curve" Index="7" X="-1.10457" Y="2" />
-              <Point Type="Curve" Index="8" X="-2" Y="1.10457" />
-              <Point Type="Curve" Index="9" X="-2" Y="0" />
-              <Point Type="Curve" Index="10" X="-2" Y="-1.10457" />
-              <Point Type="Curve" Index="11" X="-1.10457" Y="-2" />
-              <Point Type="Curve" Index="12" X="0" Y="-2" />
-            </Component>
-          </Line>
-        </LineStyle>
-        <LineStyle Name="Fenceline Square" ScaleWithLineWidth="True">
-          <Line Offset="0">
-            <Component Type="Dash" Index="0" Width="22" />
-            <Component Type="Vector" Index="1" Left="2" Right="2" Scale="1" Fill="False">
-              <Point Type="Start" Index="0" X="-2" Y="-2" />
-              <Point Type="Line" Index="1" X="2" Y="-2" />
-              <Point Type="Line" Index="2" X="2" Y="2" />
-              <Point Type="Line" Index="3" X="-2" Y="2" />
-              <Point Type="Line" Index="4" X="-2" Y="-2" />
-            </Component>
-          </Line>
-        </LineStyle>
-        <LineStyle Name="Gas" ScaleWithLineWidth="True">
-          <Line Offset="0">
-            <Component Type="Dash" Index="0" Width="18" />
-            <Component Type="Space" Index="1" Width="2" />
-            <Component Type="Text" Index="2" Text="GAS">
-              <Font>Helvetica</Font>
-              <Bold>False</Bold>
-              <Italic>False</Italic>
-              <Size>6</Size>
-              <Upright>True</Upright>
-            </Component>
-            <Component Type="Space" Index="3" Width="2" />
-          </Line>
-        </LineStyle>
-        <LineStyle Name="Hot Water" ScaleWithLineWidth="True">
-          <Line Offset="0">
-            <Component Type="Dash" Index="0" Width="18" />
-            <Component Type="Space" Index="1" Width="2" />
-            <Component Type="Text" Index="2" Text="HW">
-              <Font>Helvetica</Font>
-              <Bold>False</Bold>
-              <Italic>False</Italic>
-              <Size>6</Size>
-              <Upright>True</Upright>
-            </Component>
-            <Component Type="Space" Index="3" Width="2" />
-          </Line>
-        </LineStyle>
-        <LineStyle Name="Zig Zag" ScaleWithLineWidth="True">
-          <Line Offset="0">
-            <Component Type="Vector" Index="0" Left="7" Right="7" Scale="1" Fill="False">
-              <Point Type="Start" Index="0" X="-7" Y="0" />
-              <Point Type="Line" Index="1" X="-3" Y="-4" />
-              <Point Type="Line" Index="2" X="4" Y="3" />
-              <Point Type="Line" Index="3" X="7" Y="0" />
-            </Component>
-          </Line>
-        </LineStyle>
-        <LineStyle Name="Insulation" ScaleWithLineWidth="True">
-          <Line Offset="0">
-            <Component Type="Vector" Index="0" Left="0" Right="4" Scale="1.8" Fill="False">
-              <Point Type="Start" Index="0" X="-2.000108" Y="-1.999958" />
-              <Point Type="Curve" Index="1" X="-2.000107" Y="-2.262602" />
-              <Point Type="Curve" Index="2" X="-1.94837" Y="-2.522691" />
-              <Point Type="Curve" Index="3" X="-1.84786" Y="-2.765342" />
-              <Point Type="Curve" Index="4" X="-1.747349" Y="-3.007993" />
-              <Point Type="Curve" Index="5" X="-1.600019" Y="-3.228486" />
-              <Point Type="Curve" Index="6" X="-1.414301" Y="-3.414202" />
-              <Point Type="Curve" Index="7" X="-1.228584" Y="-3.599919" />
-              <Point Type="Curve" Index="8" X="-1.00809" Y="-3.747247" />
-              <Point Type="Curve" Index="9" X="-0.7654383" Y="-3.847756" />
-              <Point Type="Curve" Index="10" X="-0.522787" Y="-3.948265" />
-              <Point Type="Curve" Index="11" X="-0.2626971" Y="-4" />
-              <Point Type="Curve" Index="12" X="0" Y="-4" />
-              <Point Type="Curve" Index="13" X="0.2625904" Y="-4" />
-              <Point Type="Curve" Index="14" X="0.5226803" Y="-3.948265" />
-              <Point Type="Curve" Index="15" X="0.7653316" Y="-3.847756" />
-              <Point Type="Curve" Index="16" X="1.007983" Y="-3.747247" />
-              <Point Type="Curve" Index="17" X="1.228477" Y="-3.599918" />
-              <Point Type="Curve" Index="18" X="1.414194" Y="-3.414201" />
-              <Point Type="Curve" Index="19" X="1.599912" Y="-3.228484" />
-              <Point Type="Curve" Index="20" X="1.747242" Y="-3.007992" />
-              <Point Type="Curve" Index="21" X="1.847752" Y="-2.765341" />
-              <Point Type="Curve" Index="22" X="1.948262" Y="-2.52269" />
-              <Point Type="Curve" Index="23" X="1.999999" Y="-2.2626" />
-              <Point Type="Curve" Index="24" X="2" Y="-1.999956" />
-              <Point Type="Line" Index="25" X="0" Y="2" />
-              <Point Type="Start" Index="26" X="4" Y="1.999921" />
-              <Point Type="Curve" Index="27" X="3.999999" Y="2.262569" />
-              <Point Type="Curve" Index="28" X="3.948261" Y="2.522664" />
-              <Point Type="Curve" Index="29" X="3.847749" Y="2.765319" />
-              <Point Type="Curve" Index="30" X="3.747236" Y="3.007974" />
-              <Point Type="Curve" Index="31" X="3.599904" Y="3.228471" />
-              <Point Type="Curve" Index="32" X="3.414183" Y="3.414191" />
-              <Point Type="Curve" Index="33" X="3.228462" Y="3.599911" />
-              <Point Type="Curve" Index="34" X="3.007964" Y="3.747242" />
-              <Point Type="Curve" Index="35" X="2.765308" Y="3.847753" />
-              <Point Type="Curve" Index="36" X="2.522652" Y="3.948264" />
-              <Point Type="Curve" Index="37" X="2.262558" Y="4" />
-              <Point Type="Curve" Index="38" X="1.999909" Y="4" />
-              <Point Type="Curve" Index="39" X="1.73726" Y="4" />
-              <Point Type="Curve" Index="40" X="1.477166" Y="3.948264" />
-              <Point Type="Curve" Index="41" X="1.23451" Y="3.847753" />
-              <Point Type="Curve" Index="42" X="0.9918543" Y="3.747242" />
-              <Point Type="Curve" Index="43" X="0.7713564" Y="3.599911" />
-              <Point Type="Curve" Index="44" X="0.5856353" Y="3.414191" />
-              <Point Type="Curve" Index="45" X="0.3999142" Y="3.228471" />
-              <Point Type="Curve" Index="46" X="0.2525817" Y="3.007974" />
-              <Point Type="Curve" Index="47" X="0.1520694" Y="2.765318" />
-              <Point Type="Curve" Index="48" X="0.0515571" Y="2.522663" />
-              <Point Type="Curve" Index="49" X="0" Y="2.262569" />
-              <Point Type="Curve" Index="50" X="0" Y="1.99992" />
-              <Point Type="Start" Index="51" X="4" Y="2" />
-              <Point Type="Line" Index="52" X="2" Y="-2" />
-            </Component>
-          </Line>
-        </LineStyle>
-        <LineStyle Name="Double" ScaleWithLineWidth="True">
-          <Line Offset="-3" />
-          <Line Offset="3" />
-          <Description />
-        </LineStyle>
-        <LineStyle Name="Tracks" ScaleWithLineWidth="True">
-          <Line Offset="-3" />
-          <Line Offset="0">
-            <Component Type="Space" Index="0" Width="4" />
-            <Component Type="Vector" Index="1" Left="0" Right="0" Scale="1" Fill="False">
-              <Point Type="Start" Index="0" X="0" Y="-4" />
-              <Point Type="Line" Index="1" X="0" Y="4" />
-            </Component>
-            <Component Type="Space" Index="2" Width="4" />
-          </Line>
-          <Line Offset="3" />
-        </LineStyle>
-        <LineStyle Name="Road" ScaleWithLineWidth="True">
-          <Line Offset="-3" />
-          <Line Offset="0">
-            <Component Type="Dash" Index="0" Width="3" />
-            <Component Type="Space" Index="1" Width="3" />
-          </Line>
-          <Line Offset="3" />
-        </LineStyle>
-      </BluebeamRevuLineStyleSet>
     </LineSet>
   </Record>
   <Record Key="SecurityPolicy" />
@@ -949,6 +418,7 @@
       <ViewSymbol>True</ViewSymbol>
       <IsNumbered>False</IsNumbered>
       <Icon>789ceb0cf073e7e592e2626060e0f5f4700902d21a20ccc106247bfeedc805522ce98ebe8e0c0c1bfbb9ff24b202f99c051e91c50c0c62aa20cce819a4f2818181f18da78b634884fbdb88465f1645813f423a072128681f8bf70628b23ec0b353f13403fb71e67a353fa39f1b766ff8fc7bfb81bf472dcb2d8d850fdf9c2121f5f3d19cdf656f1d749ebdb00a556b63530ad4e7ebf6e1e14d79ba4f4a58896d23c3b355f5d33b171e6a3f977563d5ea7c20d3493ba0b6facddcf208851b535794c725ddf8f1624eb5f58d957b1dfabeeb2e7f7582abe6aaa818d3ce72d6a8c2f9ecd20ba79f688c899c6826a0aa1650149b61367132877db91ec37d37f5f54ada9dcfefdf5e339977e3a374dd89bf536f5c583bf982e76ac9971a56ef4ed4376edfa4f541e7c76ea6ad4f5ead3f3a7545c0fe633f0b2f4e5ce8f4d754ebcafac2ba989239ad651bbc14ce45caacfe66caf078b9cf9ba246818fc9459a9392aff171c496a8544a3a7c9db73d9cb1a62ea7aca3ffd98d83398ddfacd8135f9d8f0bcb615828ec3ed17ceaa552be709d07596fcd12b639a8b0794d4ffcf55e6d42ac34a7c112079bf687821b18372f78dd7e7bd3857dfcadbae94b0fbcb13eee16d273dbff4bcfabed333c3b1e982dee3dc4763059a074879ed1ec1532daad7ffbcb942c7d4b1a67ba08dfa8d7d21058c4f143707aeea44817a33283c6f937c2b893ab599c567c7f9d64ec5128d0e07776ae92ca9f359beee7992498ec2c75a98e6eddf628bcb44f6db7d9cfe015873e30adefbb98a29a737cdba5c7e2621b0d774e9968df0a4c0c0c9eae7e2eeb9c129a00dcbdfec4</Icon>
+      <FromTopLevel>True</FromTopLevel>
     </ToolSet>
     <ToolSet Index="1">
       <Hidden>True</Hidden>
@@ -958,6 +428,7 @@
       <ViewSymbol>True</ViewSymbol>
       <IsNumbered>False</IsNumbered>
       <Icon>789c012402dbfd89504e470d0a1a0a0000000d49484452000000280000002808060000008cfeb86d0000000467414d410000b18f0bfc61050000000970485973000016250000162501495224f0000001c6494441545847ed97fd4dc4300cc56f044660041640620446602446600446600446600436f0e945e7c87d713e9a34a148f7a4df1f8dedd8e73469ee22229733930c9c8d64a0915711f99176c117313c4f9564a00124ead5ee22938106b473df8d09e1035f08b16c2f920c5478e8ec86ed3adb8a2403156c816c2bd11bb7bb40d095a8372e19b8f12822ef3b776aaf90e3e39693eb700b7ce319160ab98b05dae2be766e845e9003b9dc22ad235aac42cb79a2d920a72a2eb7e7805fc3c1abd04ee2fd0f63d6a81b62c5b2e6d0f3321ee8d6a8e2a0d56ceac81afe907b81a3540b3c8bfe6f81dc72b6d7fc72b0d8ce7ee1396b7060b1bd068bedec179eb386b3601fee058ac8cbed9b6fef997a1f848dfd9715882bffa7c991137ce01b63ed242a9e7c1424d47f7590764ba55d55c13716692752718251b473bf22f264c6391f6cf0811013c6ed441c7004b653b638e0e5838f2abc93b5805174e9bc1b7a2edf26c60b18959d5377abb74355dc59ed7ab8b47a01a3f2e6e4e2ac8ddfcd4d1c071d4d4ce46037051719e338e8684a4b0cbc22b34b3c83d226516c91f85797dd2433281d3316d850dcb3f14f8e9959e40e6aa67a50cf22f7a9537bf3a76e26875c1656b0fbba750581214177e9b75ce40000000049454e44ae426082190bf398</Icon>
+      <FromTopLevel>True</FromTopLevel>
     </ToolSet>
     <ToolSet Index="2">
       <Hidden>False</Hidden>
@@ -1174,209 +645,6 @@
       <ViewSymbol>False</ViewSymbol>
       <IsNumbered>False</IsNumbered>
       <Icon>789ceb0cf073e7e592e2626060e0f5f4700902d21a20ccc106247bfeedc805522ce98ebe8e0c0c1bfbb9ff24b202f99c051e91c50c0c62aa20cce819a4f2818181719ea78b634884fbdbe9ddbecc863c0ed64cca252c6e094024022621887971f8d1a9e7cfc5da9d7ddad5b27479d06dcfb8e2725dcbce132fe77176562bab68558a4dcc5fc95f25f9f8b9a69090e886807c13ef3617d65dc5f153b92f39eb1f8c88bfafa2c26553f2aeed6e69fc6d2033c231fef6a2f298cd0a25ba57acf55484d2052bb36b82aa9b4d23ba4df7ba877d387adec030a23af8c2a95a333b8ebd1bd8b253557395a3d77c9c3733233f22f871d5ce62de1a29fb0ab15d93ef4c9e3e47f715b3e1e34deb16de9f7e5dbf24faca87e6b4cd1f2274654eec7fb05684f5bdeabf750bee17c5eb7f5dfbf0f0f5cd4fd4387cd7c5bd8a3edcbe3efda4afc02cb583e7a5ff9beb7dfa76766253bfd2a7c97d6cdc9eb74ba62c3895a9a392fb58b0298ccff0f777d74b66e7c5be1471b4ce91350836e85862b3beca6569ddb6e634ce6ba72e9aff15323fd9286b6395376db6e60dd5e7acdf1745f33925b1ef7aaaa0c2f6798a8a058be969470f9e67a69d2f2c777b02650ce43ddbc255be6644abb22b1a4aecfd9f13029267e1144d62df79e7cee47df9932748707c8ffeeab7f623f7a45f2a4e9fbe3ffe088c3e064f573f97754e094d009c29cc9e</Icon>
-      <BluebeamRevuToolSet Version="1">
-        <Title>789c0bc9cfcc492d5108cacfcf2d06001dab04a2</Title>
-        <ToolChestItem Version="1">
-          <Name>WWMTJRAPFDFXKSTI</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced564d4fe33010fd2ba35eb695c04e424b0b2a4550160969574280760f8583934c49568e9db51dd2fefb1d276d0308c461577ba252557fcdbcf7ec37a34ea7fcea8e5f6bb97ed46a2e7595f21f685c9ea05d8423168d0f46230847219b0cc77eb05bf183e18406011b85efacb4510ffc66de9f9eae0a094f686caed5492f6441ef74368d75ba06da50f678b51427bdccb9f298f3baae19cd99368fdc26191682d3743f154e708ae43da0e971a29543e5eed6259ef41cae1ccf5c21dbbdb3ebab1f5bac7359618ca2b8beb8bcc1a7ea380ac2497bca96989cf42216119b96c60b0af541c3203c3a3ae2ab26f76c5ace0e83219bb0904570a1b5b10cee742ed141a28b521857102548fdce1ee42a91559aabc766013261d25a18dc039b09299b08b9863a77190c8321e02ac1d281cb84837c49bf08a22c8d164906b905a79b25291ccd6d9e22e8f6d06be43d48240a23548210a3ab115573ae21f15ea050297dd7a063eb4c9538baba0dcd186118792d195ab8ef87c1e1088ae27e0045aef2a22a587b11dd69a913e130a590066569e8a1c003e54d5622b1d969b8d43e8ad6ba034b1a1196f3914573b0a67c8654698b8ec1cf0ccd47287b9d625da2f26fd0a9792e26d868112bafa583fc97dcdecef5d7145f492627ee1e799bc7a25cee7b6e949dc159bb5b563bf379d0adffa80cc65d642945420a4872ac5deb37bbf54d934591c53a43be5f069b944a3bb0b5c7cbd5c6c91bff80c1df556e08ec851f0d0a36e5e56cca7d97980df86d15ffea9f25d4996c1e4bdc02cebba0013fbfbd9a6b5915ea827ac5a2ef2fc4bdcdcb57d40e98083df3edb0f7de5d6feaa779ca8f9c0083fe1969f07736d7548a460dfabe50e09b87a1f71af4bfa3fa62b73a6eb42e060f5ea5a38eb66dc9fc0613b7082080f070c4c69323fa1db3300a1ff8bced7fb6ffd9913e3bd26747fa3f1d69c02f61c8e78b902a3278e0e75fe90fd42d9ff32b8866f4f9035d523746</Raw>
-          <X>15.27356</X>
-          <Y>15.27356</Y>
-          <Index>0</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>OYZVIUYVNQLXLAZX</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced55c16ee23010fd95112738ac1d930408825405b6129715826af74039388969b272ecc8761af8fb9d8452daeeee1f54b964fc66e63ddb6f92d98cae1fe946cbf3b3564ba9eb8cfe14c615a9b07be69160c4fc10fc3119b1e1047021643e2eb448180d03f003e285e330e856261ebef83e8902366e6ba23064e1816e97fdd9dda994f0228c2db49af718f17a77f12cd1d9191050767a3af2792f77ae9a52da340dc19868f34c6d9a8b92530cbf65dc718a95b407184e53ad9c50eef15c8979cf8993a3b92be505bbdfac7f5eb916b21689e0e566f5b0152ff574e8b1c925cb56229df78664886a2e323e4868fc4e018ba2889ebadef1ac8a475e402232825581e5ca220b81475d48e1a0e2953090bd0160732e25a4baace4199ac2e5e07b110980abec154b048ca150b8490b4f7d36f1a02c9f065016aa28ebb24b8c6ef8d0bfe2fcd4e18582a3c173007d04970b68b84305a9d416e59482dbda880c9ceec0144f4b185928714d7f938a5bc050d7aeddc667f0269505372d7e18fead95bd131b4cc28f6279a25f44d7fa88253687a3d4fa426dc48d84a37ec10d5769a79301a3c377b4938fac8990bae99a3e1b9e40c2b1e1eaf30d28eddaced88d8343bf603e77d01ac868692113b2406b9e419b0b9269e46a8bb018bbb78985aa756d5faf1885376446ab78465b0bc703baab93dffd571b6cba9c371103bad8ad975ad6a55aa183f7fdf6a8dd3f1d03c585d6e6ba51ede576d7a68d11a903a953eed0d164d0ff8139f7692a2ac7132906ff23ee2f345aee15dc6a5ddac1a155da1ec175e2e9167bef3df0200870b6db910e26c48f463e3bd0e565c46cffcbf45fa6ef4c3fa00f10d0e59ea161bc033a1b7f1fed17982eb4c984a13b7c7e018b63baf88ed08e2ee9ba0de3f80f4ee321c7</Raw>
-          <X>10.46136</X>
-          <Y>10.45929</Y>
-          <Index>1</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>QZKKNOCGLLZMBKDK</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ce554cb6edb3010fc95852f950e252959b2654376103b0d60a0688dc4480f8e0fb4c4580cf81048ca8f7e7d29c96e5aa07f504107ed72383b3bbb509ee3d506afb5b81cb45a0add94f88519c70b66b7518a92241b65901234244904bf13fd4716413242519ca4f13f32d74b3bfcb40cf2bbb3147064c672ad66830891c1dd3cdfebf202fe40d9e9f98dce069573f514e3d3e9847c8cb439605b544c52ecc3cf257514fb9b78003e9c165a39a6dce652b3d9c0b1b3c39593a23fbb5faf5e6eb516a2617b46e5fae1f1891d9b694ca2ac47d99a15b3418c62afa697f19784d3b053104d26137ceeb8e7793d1f92318a616db4334d5b00be72c99d45f07dffce0a67e1c45d0582d192ab03b0f2c02c486d18b88a2a88c7c0956fc9c26b30ca5290f23504aa4a50dafd01cbc8072c264372c5edf5b1053078e38adb0ade84d606fc7b30baf124b6a24240dd692b19241f2411b972487ae6b2915069c37f7a07fd858b8739ddf116dc148da0aeedaba6ae4239aee7396ee7340ff173b37f0fd6b4660636fac4043c706fa1b2cc8478f1bc5a6ad148f5e0a7b40d369eacee90ae43963764abeec84b56faa27dc976e57c2874d1d7e516fc68adc7189fa6b7765a377567310208836fdeaffba260b5a37bc1c260fd81ea0711063fb464ea938588a4e1ae15effcaadc361d3f79cc960041849068988dd3c90846114ac7c31846291aa7f138dbe165bf6436f8bfc61ee24748f0721b81776887175ffc5fe2192ff10ae2b97f7e01d78d5f76</Raw>
-          <X>15.44867</X>
-          <Y>15.44861</Y>
-          <Index>6</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>FUXGSLQABTUUWEDA</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced554d6fda4010fd2b235f6a4be9aed71f6023200aa449b95488a05c0887b559b0dbb5d7f2ae03f4d7778c21a86a0f55d4632c1f6676de8cdf1bcfd8c3219d2de95cc9e34e9553a99a0d7d16b5c953a1572c24be17c711f88c042173fbf076f26644210903e6797f39b964ade9626a0f6f0f85845751eb5c95238b11d7ba1d0f13b53902064a3d386cf9c8ca8ca90694eef77b823e51f58eea341305a7e87ede70c32966520bd01da4aa34a234cb632546961107433353c82e76379f3d5f9e35918d48042fe6f70f0bf1da0c3c97451d4a57221d591ef1904d47e3370a7bffc480c5714c0fa7dae36135eeb9310960ae746eb03ca82d3cd63c8109af35e9cc044dd0199712120179a90d9a62831670c8549dff44e65c4275ae7103be8f4114aae1c58e02178ae2c581222ff3a22980971bf07b5740ccc233801f3a40a25e05984cc0165374065ba9540d85e0baa9f1b9469d8246552ddbd6dcd57955e5e50e10b0e5a9b8017148456530c80de0bde746d4904aa585d1b0c56a6996cb4d2dca4f1a1a2d205545258f6d897d6e32e8b901896fb0ee3be4038baee28230fc53bdd7bf027ad17f574f6089a799c87799b960a4da63032e7a0059b6a7094f7f606f5019c238ba26334d7216dbb5e4d28f3e0908230c904ae778e80e69351ed276eac70e7d6a92eff6dbec3874f2349b2ad914e53dcef9ca5e9e985efa896cc45513be21bf4f42eb1fc4616ad6e6fa3d0b727d8260e70009a3c2cd593571ec6fcac05dda0e014fa470ecafa780632f552e8581855285b36e391bdcb7cb07832e446a562eb8c05c97447de641d023fd88b9e19a4ebbfdd4f6c7c67c6ccc7b37c6a10f10d0e98ae18cb96b3af9823fac273aa533f0c678fd026c643b52</Raw>
-          <X>15.32996</X>
-          <Y>15.33008</Y>
-          <Index>35</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>INWPUHWRWDWROZVQ</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced554d6fda4010fd2b232eb5a5c66b1b301f02a2843412972a02d41c0887c59ec45bed87eb5dc7a4bfbe635312daaa55a4b6b7f860edc7cc9bf7deeed893095bacd98d914f0f46cfa5a932f6094b2752b49ba81f74e35112419cc441d2ed0ee179a51984a31ec4513788a241ffd78563ce962de7dee47caf243c626985d1d34e14849df3d96467b227a00d6dc7fb7b3eede4ce1563c6eaba0e681e98f281d93447c5194dcf32ee38a34cd6019a8e53a31d6ab77e2a70da71b8772c774a1ef62e6e169f8eb52e65853be4eae6ea7a898fd5380ea3e121ca16984e3b7110139b038d1f28d4dd9641341a8dd8bec59e4d8a5912f68261100511acc4570ce036479469ce45093c25d3acd84984d4a882974e11410b36e752c20e210941681264e1ce8bfa711f94baf3a1161982125aa84a81426eab123328b02c506722ad242fc1197039826d426b427b0f5c67d04f4ef07a7178c0cb108b67bc7b53b6099057fa81460e4b48a5b148bc5a88d129a5f07710f7d2d05b998a3ccf7e82f933e512f981c1abac6a6aa5b9905989fa9d85cae27f74ef75d25fdc6b92fe85111356cc26acb9fc339fadaadd67efe2c58eb511121dcc5f5cf1d9e56a3137b252fa8a5a60e3ad09edc44077c838f111329181368e18d14653fc2828c3c2e544e54b254a6c2d0f00160e7851103ddbc66aaca141128efac7428d25b660425b47f4491f15376526c812d25648ae03f0bd8f14d2e8281c2756bed7b4079cc15553d1f76e8d6a4ff4bbbca531cadf36e21df5eff1f3c39698ba4d0861108661148649142710c7c3a0d71b403c1804a35e37dab2f9a1f3adf7d68b6fbdf89746f8ec1a7a6cbe8980aedd965d7ea0ffe18acdd902e2193ddf006f4268fc</Raw>
-          <X>15.32947</X>
-          <Y>15.30933</Y>
-          <Index>1</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>WZELNRESYFAPLJPV</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cd5564b6fdb3810fe2b842f6b038da8b7acc049d1b85b20976e9104ed21cd8196e8585b49d48a541efbeb77c48744d96e3729ba873520501cce7c33f3cd0ce5d50a5fdee04fac7cbe67f5ba645d8e3fd3561419e5b75ee4789ee7a6285a3a21ac3e1a24fd8b9b2e5314078e1fc6dea1c0d8dce1abf57cf5f6a92ad1036d79c1eab399e7b8b3b7e7ab0dcb9f111cd4fcf4694bce663b219a538c1f1f1f1dd83bacbdc73cdbd18a60d89ee444100c967886607b9ab15ad05adc3c37f46c26e893c03b5195eaecdda7cbcfc6d745d9d10d25d5a7f71faee84377eabbde5269f186666733dff1211a15c62484c74046e0a5698a9f24f6f9aa398fddd009d0baa4a42575469df19523d2b2aeced12311b44559c938152004495123c18a920a94b1aa21ada820728ef88e94a51495cfe8b1103b24d19d156ec015c2833fc743d7c5dfb633e38b4cbc69c40d0520700adc71f475ee457e84aaeaeb0255455d545d852a4a78d7d21c35b46d689d17595792166d5b5621b1a3881739056080eaa38f620b2bf4ddd761b510b1c43a92968ffe809e2849e3a01ba9fa5757f450d97e9a3dd0f144c16b550801468221a6d00ed4df20c239cb0ad2ebddb7648336a4e56f505e400fd49cf6ef9cd48520ed33aa49f30d0ad69f314e4ad4811cce334604da31f6add7ddd1f281c20bc9a0eebcd894103ceb442f92b1a36dc9588b7843fa1c6a2b233e6609780c2205e5e24900853d9ece15b67551df2b00077d647b9a08c0d9868bb6cb0474391ff9285926b3ecdba96f3b9bd609834344aa2eb81fc6f305beee367fcebf48c5b552943d873ec884aefb7816f8e2fa72cdcaaeaadfc34cdecefbda7106bc0f7ca2aae3c20e278611331d336933d9656c7b586128277960456e8adaf47c88832e3114a14b01f67c6c4760374a6787ce407531ffc8047a07b56b0481da2de6d77df4ef87e84f4c5f2ee65f18ccea6f1cdda8f9bd62ac5adcf52c09b878ccbd89af68266e5dc775dd6514b8b197a013b90b22189814254b2788e2204449e044bee7c57778adae2fbedad2ed161463787a83d0757d0a2b6c7cd887b0c6193c113c9eeb26be5a63d0890325eff55faa9b68dce11c7c2791d609d55992e8f350dbf8dac6e06f158e3c0ba798364e9caabdc40c959d9465a3ed80db9fe520b3629336b9ce874e7d49ff4bed3353cf512c9027a99557aa71974a76947758dd5c3ddf3b0f3c651f051a93bcbe16ff5687d8fbb97afc901f7ff46d72b36b151b3bab57fca5ca370059e0ab55dae4eaf1536b6f70525d8348eb9873c347a0ce121dcfd07bee98a379379c484c6d2773f22c2ee29147e3cfd4d9e49be85ac5a1254b8e70b4d7c732eff8153c859a27f77fca93ef4efaf6284f2f99116d1bf6fd198ff10e31b9e3bc44df8921f1741ee92107f12f98b183dcffa359b3eb65ea2fefb370afaefa9e94f63fe2ed57c46ef5bbec3373779a39f10ee38b138b67dfcad3dcd98185ab7b51625b3d3ac4b0a72fe5a67ee69e36b86676e8c841bc7127df98037f5b0bd3f888a6f893784dfe9ef56d5a6ad956f93b8857f32fbf33a656c1945b896b7d7f877bc8d4d4ee79dda3430df7e3dbeb7733d3a6bed2de1fe34bec18ac79987c675ef1bfe1457369f3b79df6e924e6de76a9eb60dd7107fcfd685e6d5b739f52d5a7dfe5c07ca3e9deacfd4c9cc6d61fdf63ddd752dfd73ce9bd8c6f3bcec14bef8fa1bec1f1b9dcff6f73f0dfeb9577ebcfdc832fba8fe939fe8042bcbef5908bdc3b7cf1fb6a85aff11a5f22ff1c7eff00431c2319</Raw>
-          <X>15.11084</X>
-          <Y>15.11096</Y>
-          <Index>19</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>EUUZMATLVYETWHGN</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cd5575d6fdb3614fd2b177e990d2c2225595f81e3a2715720c0300449d03ea479a0252ad620998244d7cebfdf25453654ec76f3b00d58004522efc739f7dc2b2a592cc8cd03b915f5cbb3d8ae6ab12bc827dec92ae7fda31f7941920473f07deaa5619cc0eb0e3eccd32c8234f4922ca627774cd413b95b4d17ef0e4d0d5f79d757627b35f13d3a79b75cac45f10268d8f69787925d4d3652b69784ecf77b0fd79ee89e499f6f78c3082e2f0a2619c14832015c5ee6622bf9563ebcb4fc6a22f941928d6ceac1f6fef6e693c5baae777ccd5973fbe1e31dffbabb0ca89f0e5e7dcbf3ab49e005c866a031a2b00f35033fcb3272d0b9978b7689a57901fc2a722631bd070f1b0e7b267907792d7a2ea1dfb0ba86358756f495f2e105ec2bb901867e68111db40c25562690022426e838eb806d0bb5c600e8ab820fa9732c917775859ba2d4bea7c1fc18aa2d6ad5c397e99c46d0345f66d054dbaad9352aab9f3af6c8dad941dbcb4e343ab7c23d66f933f043ce5b892e4cfe8843e2608474cc4155e7678e437a1e098cd456d6ac773593a27b0196e398f6d5bae658615523955c342aa041d14075b72a2b541f2355d7526c347c7698f7afd459d7b1ed33fa9688c9a0e6a5bcd828cab8ecaae78d59b1b6ed04cb37de82b4380c40cc2fa226793923f7bbf5efd30162a52166e4fafe6625ea5db3fd80e3fb383d1a973deba1e1acdf75888ef2fa99174dc662282d3cd0e3804f628f8e9a2d543df67d0217d8dd093acca6bf0909ef73d52b86aacca6764c67d3cf0245f909fd69347b523c25be37f6c527773c978f142864994793789e821fc41e4d237c7b57c37bd62f4a5e969486315e14af39a501c77b80775ccf734a63b4c7688c7d4a13b4c799d9e383aff28bd47e8a5734ac93c4f1c7bdc4e4d3794cce2434b6b989094d0edff8e4262670f25227363be6a3fce2b9c3c1faa426973fe637c2295f7926c657ad2dc651edd4ec95ceb3ab81e16df3587ccd737e1cefd6f04d8f6cf0d57bdfd13a363aaa58576f5d5b36cea931e2eff0fd977a16fac37ce97dcb277cc55639942d4887f9d37368f916c31564cedae6c8867512199f377a6adcf40cdce84f709536e9695ca5a9d6bc7cc3c5d5f76d3fffa939b47191e1677b449d3e592efe89bdffa2ffc9197d088719f83bfd7ffb7e69ecec0cecf47f3a034e7da77075fe62e88be69c3bbd365849e6f886ce1c850e6f7bae440e4e696cf9783674bcd1e2a886828ece2cab4d62e638b678b1b93be7ba5be7d1772b75be5ff6bc3c73aeed4cfc95d9fe5653e0cc5ef2866f3ceea7fd0659bdf4dc28dfc2c1736678340b81a93f197c7f18e79b33c0c6954e6f8d4eb450d7927c8439593dfaf8b7027d22d7bfe03f10f764456e2058e2cf1f75320c36</Raw>
-          <X>15.27722</X>
-          <Y>15.24896</Y>
-          <Index>3</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>LVXXGQLUVTIVWRJP</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cd5564b6fdb480cfe2b842f6b03adde0f3b705234ee06c8a55b24417b487b184be3585b49a3d58cf2d85fbfd43cac91ed6693a27b5803c26838e447f22339f272e95edeb89f58f974c7ea55c9badcfd4c5b516494dffab1e3fb5e02f1dc89f0c50723e8576fb15840123a4194788b231263f4cdbd5a4d97ef1eab12ee69cb0b569f4e7cc79bbc3b5bae59fe047850f393c70d399d6c85684e5cf7e1e1c1c1bdc3da3b97675b5a1117b76f7322888b96ee04707b92b15ad05adc3c35f47422e8a370b7a22ad5d9fb4f979f8daff3b2a36b4aaa4f1f2eaee87d771278fe5c69f18666a793c009301a15c62884875046e06356eea3c43e5b366789173921ac4a4a5a5267d4195e39909675750e0f44d016b292712a508892a206c18a920ac858d5905654183907be25652945e5133c14620b12dd59ba0dba0277e7cff1e1baf8db76667c9191378db8a608844e913b0e5fa77e1cc450555f675015755175155494f0aea53934b46d689d1759579216362dab406c29f022a7088c507df47162614581f73aac1623965847d20ae00fec8992340edc48d5bfbaa287caf6d3ec818e278a5eab420834120c98423b507f0384739615a4d7bb6bc91ad6a4e56f202fb0076a4efb774eea4290f6096ad27cc782f5678c93123a94e379c688802d63df7bdd2d2def29be900cebce8b7589c1b34ef422193b6c4ac65ae00de973a8ad8cf89025e2318c14958b478114f6783a57dcd6457da7001cf8c8f63401c1d99a8bb6cb0476391ff8285926b3ecdba96f3b9bd61183bb88545ddc7e18cf66ee75b7fe73fa452aae94a2ec39b890095df7f1ccdcf3ebcb152bbbaafe8033793bbd912d537f87aae3c20e22c1c1327d326a2ed95b6c7358572c22b967456e4ad9f42c8883de30c4c0a5407b3e3421721a2f2687ce507536fdc804bcc78a358260c566d3eb3ee6b7a60767d32f0ce7f2370e376a56af18ab66df7a46045e32e68e74af68266e3dc7f3bcd00b83641ec15bbd8b933848209d3b619c84734843270efc106fc095baabf87243371bd44c7a6d7c22cf0b28aeb809701fe19a64f8c4f8f89e97066a4d50270995bcd77fa96eaa7177e7e83b8db54ea4ced2549f47da26d036067fa370e45934c6b4719285da4bcc48d9495936d8ee70fbb31c65566cd226d7f9d0b12fe97fae7d66ea398a85f27461e5b5d0b873253bca3bae5eae9e1f9d87beb28f438d495e5f8b7fab43e2ff5c3d9ee527187c9bdcec5a25c6ceea9560aef20d5116066a9536b97a8285b537380b5d8358eb9873c347a8ce521dcfaef7bc2147f36e389198da4ee6e45b5c24038fc69fa9b3c937d5b54a224b961ee168af8f65dec92b788a344fdeff94a7c01bf5ed519e5e3223da36eafb3319e2ddc5e40df312ff2086d4d7792c0e39487ec18c1de4fe1fcd9a5d2f537f799f457b75d5f7a4b47f8eb75f11bbd5efb2cfccdd69e6c43f8c2f492d9e032b4f73678716aeee45896df5e82e863d7d2937f533f7b4c135b343070e92b537fac61cf8db5898c6473cc61fc56bf2f7ad6fd35ccb36cadf41bc9a7ff99d31b50ac7dc4a5cebfbbbbb874c4ded9ed73dbaabe17e7c7bfd6e66dad457da07437ca91d83350fa3efcc2bfe37bc682e6dfe36e33e1dc5dcdbce751dac3bee80bfe7e6d5b635f729557dfa430ecc379aeecddacfc4696c83e13dd17d2df503cd93decbf836c31cbcf4fed8d5373c3e97fbff6d0efe7bbdf26efd997bf045f7313d732f207257b73e78e07d73cf7f5f2edd6b77e55e427086bf7f00683b1b8b</Raw>
-          <X>15.11029</X>
-          <Y>15.10999</Y>
-          <Index>0</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>PEGRVLRDEUKFACGC</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced59596fdb4812fe2b0dbfac0d2464f3160dc783449301fcb0334162cc2c90e481229b16173c3424e5637ffd565f64f1902c65e4ccec620230229bddd5555f7d75347d7565dedc9a1faafce9ae2a9779b54dcc5f59dd66316b3e5b9e61874ee0108b3a46e00636e947e0c60f2c8b580bd7b03cd79e1b51abbe9a1f97e7573f3c1639b967759355e59b33cba0673f5c5fadaae489c08bb2b97c4ca33767ebb6dd5c9ae6c3c38301cf4655df994dbc664564c2e3eb246a2313569a67041e2fe3aa6c59d9de3e6dd89bb3963db6e6ba2d72f9eeed879b5ff55eeff22d5bb1a8f8f0e34f1fd9fdf6d2a6d642ce6a362c7e73661b366823d518a8f0e0080dac300ccd4721fbfa6a73ed53d758189661914fd97f98417e5b3396c7eb28ab4914036c4db6ca1989ab6213d56d010a36a45947794e568cf894642518d4902fe796677ba428be5c90872c61a4c8caacd816a46051b3ad594236acdeb032c9e26d1ed5a4ad48bb66a4e1531f40da2b129509f17c24cfb5a9949730b6e9e4a5552d1690f5b6bc83bb96d524ceab86815e42448855a2bb44a47905ff17d516304f4662f6ab5cb3486a7010547caf789de549cdca7f3464dbb01744ef30d37bf4f8a2530071656e8049c4e4747a9bdc674d553f9131af6ed7bd59cd268ab980dfb719179f952033cb593bc42e6bc8a6aeeec1c884347ccfa82511d7a5a94a4032e3169087de07715492222ad916c21264829a9baac95a081a022bb9cad83cae11ec205581a565d572a754aba6adb7310763f5445611fc07d2cb3bbe5b1b817f1b027855200d48943db6808f1881e8bd6765c64ae0c12bc21e63b6016db97c16676906e240078e8963d8e09f5f40c73cda7cb930c84d3a6b7d54338e34a804a449f8edbae2f4e937153a002a80de1a2c82dd9a2ace22e1c7ac5d4f2c7ec5479e48b16d84a5096bb2bb528ae6faf2bb5d3e122a1964d91bd9ebd16ce335b774162bb1599437c2101424dc39acdac09d5035c99a6895e5e02c5803b21e1870147e619a34132caf4181db19a0242feaa14105e3f6728273bf4af35e3d631f90e7494c57ac2351026f01403597078fe617377142b1680e834174e8a070c11246963984500460cae8486ba800841ba624968234300930ac4a15effd7b99483a65c16c20b21649aa94a07c603b2a1d68f3a35575cf0420298c346b9508f89efe208dcc6491157baa4ac916e489d742bd34927bf3979daa22207208d97bf10e99b0dd6caaba0577152be1e0e541c9738fcd96dd6bef50ef10a3071e7affafe5fb0fb737bffc7c295cd4cb562964ec2448219c323897451815720779b2d581eadb18dbc043e08a388844427d3da96d3cc3f81e5aeb0f1ca3d60a6b5ecfe57263de9811a18eb405f3c40f50f9324e04dd8cff45b0c3c2a1263b9191ae35795f767d617edaaefe7dfe562521a69309a2dc85f9eed3cdb2cab745f92334679fcfa1c297238e29ad756592496590d9c629aacbb8503cef586d105979f08ca462522ccf5bc33405c57394852fce7f8699dc8e8dc83017e7ff549379a5bd38ffad2a045e1f3f42cf1a5e7ce576b7d055eab6d8fcc8e2f6332594402b68b86e1012cb0a0d6ab9ce577329bbd0e62a65694aa9e3c345e17229b519fc2ed4af857ee1bd0793fc90d220825f4fbe13e3013c2fe498b862b81c3566a935b69c2b9e1d75c1dcc091179fe3db6aada7e6f271d0cf4f608e5acbe504ae1c137b31f9cc65f03501de3796979065f772b5bd623c94323a7dbd5e96bd90b63b30e6d8f257ac49e465876acf40c97191ee09921d2a1b3cb58e22fd2d8581276d1363ae924b953e767f2fe4b94aa65a27ecb47a8c053e29ba5ff47a7558235d85fe18af18f98af5fa081cfc237073156e741e37ad83584b0fc4cd97b675b68e75a7529f4063150ce7056e8f69c7b158c9d49c447c9ac5203c923bf4653110cfca86c178a29e519c0cf8f5ad98fc59dcb5d1bebbfcff17cc49137f693d4225db45b671fd0394cfbcde077fe7b7ef90dffe62b17d687e1bdbf2774ea0839c401379b9968a375fee19383d3e41388c9f6fee87463a3ee7738117ce4323db024bcd0fa7986ab918a72eaf281f7d73de0a511ed2faa43d76fe983bce8c9f2ca48335c303ad97b641e73b8d57305a7b4c5e77fab8e8fca0e3c4537bf9239e87282e52a46fdaeb1568be22bdb19d138e1e1953131e613fece00ab6555c29c21dd506a1b3c23d50754770cb99e6021fc58490618dc630eeca5763bf09996a5dc749a7d7a5c3221de236e86db8fd0ba52fca2bb372109fb46fbbb8d3f7a8ce77b5c0937b74efe890b713fc156642ae8fe4bb533e4cf289a37eedbe9eb8291d70b1cb8154d513c50957edf722f16ef5d88ef32ee610ee497c7766ee82763506f72e07fb728607389f0cf29dde0befa36b90c640fb09c5e0a0de85bdac93c46f3c95d3c54cd2e3321b9f7a0fad7340bb7c358bf588b793792f5d87e6b8a4b97a442c1eca0fdd5be8dc338ecf17c953733e53fd05ae79033f1e71a698d41a4f718a8ee6cd7055f74e8183f4d7f900d72a6c0fce6701edeb683cf31e736d576ca238d7357d50c34e98a376f515386f1d1d437aaf51fc4e7aea715ddd157b33f1ff5de30ff53a5d0c8c74dfd7cf75b6bba37d510edcdb8b8ccfbbcff45d935eef043d98ee174f990ff039e2d933823be2bf8772a292d7f156ebe1f4fb746b317ffcde671a9f0e1b1c3b7bf019f019e38575c2792eedfda67d3e395f1fb8ffae6f17877071d0efe09ef7392cb50daa673af87c6fcb3e6de7d9feb973bce60eeaeb6673823f94a331eadecd9de1c7df2d8ef926eb9df87b85ce4dc8d73bfb8f23f2bd9dcc734d6032ce37c8bf93deed106ece9d01623a388b621f0ef63b82fb813e57e85c66a338d3f62708d3512d758fc0ef7b7e7bfcaef16bf5e7a667f9aee277d777cd3f2d86f1f72890e12da46fc5bdcafbfc9cc7cf842eaf25d17c2d3918bf3ddf26fe704d41df26263dc6bebe65e6fb5557b38fc913fc7d80e4ce9cd3e6ce8ea27e1fca239d37833d5c9ac99db3fd3afe8e85e328a127f9bb958e173d4fd8e91d61a77f7c8dd867e72cff95cc537e879e9c374e18237fa4e7f99f8e0fff48deec898fc9df905ed05fff1739ed94757beecc8c6dfc567ebc645e61d7e64fc435979f2d4209fd6abe7b7f75657e3297e60db1afe1df7f01ccb40f5d</Raw>
-          <X>15.29358</X>
-          <Y>15.26721</Y>
-          <Index>6</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>BGIGTTMPUJOJGCWS</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced94cd8e9b3010805f65c4090e8b0d240422c26ac3366aa4551525d1f610e5608813a80c46d82cc9db7780a4d2aaeda1f7729a1f66e69b1f398ac87a4f3652dc2eb24a846c4fe49d37bac8b83a3853dbf369e8c26c627bce643a835f9641706800fec4f67d2ffcddf08839926d6246cfd752c0076f5421ab85e1d8d4788ea3549e6e808e4acdaf67b63072adeb39215dd7d9a8dbb2b91095e5bc6404d5a713d38c60243100d579262bcd2bbdbfd57c61687ed524d7a5187d2f9bf5fba3d652b43ce5acdcbcaeb6fca39dbbd409c6bf54cdb385e1da2ed28c189f103a6f2070c23024d721771cd5b14fb13f588956e59020422385b2ef7a76d741e54c084839e4ac3a81ac79c33447a101d66a59321caf0d5f3ff9ce7fca90c9b21637e80a9d8347c3bfd711321b2b54a073de67ad40152794ce83a1436f0399908a6be0d78cd71a8a0a5899b68269d9dc8065b87155a4820f5559a34b9caeba2314d565a4e8db0f706211a9e388f40b8c2db26bd31fe6f7a1443294b0c872b74ea468cbea15b77630f7c8307628385e01f228a8a4fe276e1bc032bf61d04bd6f33344b5cc71206f43d2b73e19eedc32b75ce18064094e601d7b3c8d57f23872b2e5993e3c519b52ea38c1cc73a7402140dd9d84530842db9f4d7de74892f1c294f97fe7c3ce2db28209490e0e8e8b1ec9f20bbe1d3b929035b8317e3f010b9c6ce0</Raw>
-          <X>15.36096</X>
-          <Y>15.36108</Y>
-          <Index>34</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>GVJKLNEFQLARYTJZ</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced944d739b301086ffca0e2738541f803fe4c1ce244e33f5219d4ce2c9c5f141c0dad0911083843ffe7d653b6eda995e7a692f6538ecae58bd0fab17b28c2e96f4c9a8e3d6347365fa92be62e7ea02ed8aa744c4f150403c202265c3187e54ce011fc73018132146a3e16f2ad7ae357d9e87d9cd412bd861676bd34c034e587033cb72531ec12f347672d8c8695039d74e28ddeff7c4e7c4745b6a8b0ab5a43efd544a27a9efa401f8745298c661e396c716a781c383a395d3eab276fbb478bd6adda91e7394fae9fee11977fd24667c7c79cab6584c8398c49ee682f10bc23e39137021043d9cf79e65ed6cc81292c063dd75a6b3e41a803285745882cccd0e41c99d74a6abd182e9a030bd47ed9c692dd84a2a053942dd58e743dfb2af5d05ae42c88d734603965b04b339973adc282c5cdd6cc1f6dd46160829f3bd7e2a16de42cef800b47e8b40cb43ad7bfdae7f6addd44d6d2bd828e311fcbded3c46f941dc18f717a993c107f558b03f84ce683bcbe8c92eb388bef4f9b7f0f21611bd7b59cc8dea7573efddb10a973fa9fb2dafeaef5cfadc04bab70ebc61b029a134fb069cf1530d0844e1573f94dba2c0d6c95c61147ec17a5bb9287c90ba5647589a5aa1039eb0687de270de7cd7af873e7bd115238c71ce93d41fcc296671cae39118c22821828b24f54a643c8cb958d3f9c5c136fcefa97fe0a9883e404ae72b0e0cd89ade7df6ffc2173aa70b8867fefa0e64a8b5a7</Raw>
-          <X>14.92151</X>
-          <Y>14.92151</Y>
-          <Index>5</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>ZZTLJBVEJQGPNCUT</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cd5575b4fe33814fe2b162f0b129338f7061546436767c5cb6a0468e781e1c14d5c9a552edd5c68d95fbfc78edd9ca629a5c08c66914262fb5cbf7373c763f3ead6fc5aa44f0f453e498b2636ffe2659d44bcbab33cc3b103cf21b66319c168e492f54efbe1c20ea546e859fec08ee6ba37af27c7e38fab2c258fbcac92223f3fb20c7af4f1623c2de22702077975b69ab1f3a3795d2fce4c73b95c1ab0368af2c1aca239cf9809cb0f31ab99099ce61181e55954e435cfebdba7053f3faaf9aa36e77596b6679fbe5efda5755da60d9f72967dfdfce59a3f366736b5462d55b5e0d1f9916dd8604d6bc686094b475a60856168aea4ec8bf1e2c2b61cc3312c725b2429afc9a4c816acac33b0a432c8b7392f39a9dba3081d1106fb8bb2784c621e9f12569394b3aa26453e444eaa394b53b9933e916552cf894f5d63645806b9ca098be3a406df8093d473bec159f27f9aa4e4b1381be0efa97e894e9b2ca55755b2224549b2e2451e0265cba60c9c263993361733d294b04881238fc992d5bc24515a541c64d4452d0eb0aa59b2aa9b9257c6d85c00fec41441d0967dcaa64dcaeaa27c229f22c8d92a99a6bc171344c33a9a0dd377ba3ea414627f93fccb0f103c678f9c3012f3054806ff7d4a921cf2ba22df8f2dcff648967d3f2159922759934954185811b7c48ed7118f42ba4deb041d41e86a02b6120483f6dbe473519480cced76e2c5e2e454084c9b38c91fe4063850c64b88efe900522e754f095f45e01cc41ab22b99c998b30524038be624a9749e0258b0ae20418463fdcc159a4e2113382b591e7132e5f592f35cd2492b76314ac0f227524cabba6c229965ad9d534e5c1b614dfd4dac0182b570cd50f174f641e423780f316e4f17cdda6b018a761cc00c3ace45ca22283cd03e2dead6cf4adb2ba5e4e05a07c46efc95c8bc80a25c0a7d49ae10d4715f57f9060e2567830177c81f259b924b26822e3fa7ac1ccefa50b82c2cffb014870f8ab8efbb90ec412174beabc21ff61e59890d5cff33c520b838316f9ae9dfc7a8ac6ea01ba427e6e5cdd5a4489b2cff0c13e0ee189a6c4efcad06d16fb1d0273b499590245251236710883dacdb83ac81869871088684a44ca029250c95c1c31ab5b63c653c65bacb0881a78d4a7f650110b6b9dc55f2baf33af691414e8eff84f88aaeb5a819348e93635195642279be099ed32e6c27c7df0a40efb74ae7cc75516427f702b01ae69f1ee0e6358fea3b4a28b12cdfb08390d86e60589637ba3727edb8acc6333e9b51ead8f0c0ac761c4a6d8edeb00747d47329f581ce0fe189e0f1280ddcf6cc75d4590c7bb0f68127b0db73b127687ddeae032557ca04627fa464d9ed5bec07cfe8f20fd58568d6f2a95a839cc0577a5cc52bf444884feb5576c83d07edcf5a7def6dbb94e5287c2c252bda2107f68350f104ad6e2973d4ee39e0a323deae8ae908c556c5c20d5bddda6f89878b64859dafd8cff5f7a8c3e0603f556c0241e7299d368a474fdfbbfaff8658ff72f1b411cf505d394ad6a8f327503cd2ded92f5a87c8cee0b99eb123077d5bc9e65d9cfbf92cbf7d254bcb463c3226c80fb9ef229bb45c0f61ea28dc660a7b6f130f8daf7cf7741c1a2bdfefe8a50e848feeb9346e9f7df9e35a1d6eb21e23e49fd2abf353d23aea51bab4ed12f7a8b3f1b573e2107bfc03ec794d0eff941a7e69acf07cd6f9c2947fff27ecd49eec015e678b7ceb9aa29bf8e17ad518c97d5db35a97d7e9b747ea8ee3a9fb8ed615b78f1da2b596132a1f3d453350ffda561d67b1bfd35607e9dd67ab7842e4db1bed94ba8317ea0edb9c7b56b7d5f69b2ddd87e4afee397ad6e89cc4f7c477bc53f9437aa2014c22e58f8bf68361191b396cabf8077473de45efdc3f5c84ab96e1a978e8faa5e8eee1221b5de4afdf3b47f517f466f4ba3f8c3afefe2c1b94857b0ee25ff71617d1ce9eb1e98db1b631d6f88e67a35a71903e3d3f753cbd4ec7a07d0379f1c37d1ce845f23c44ba549e4b3ff41c50ebad7bfdaefc44770d997b36caa17dfd56f7e8d7f45bdc035e82f51edbf53d4c9e8b18c474fb9e86eb1dcdd19d7a299aad7beab9df4bf6d636ee95c1017ea2bad339bdce117cef55b58df5f773767def7d2e6f877a22dfacb117f7869fd5f79fc39277b868baf57cc7b320ecf4ecec7f7be6f44b7effbea62fac655807ce64858d1ba0dea8e7b48d74e33bfa00addfa77dcff9a77d08b76b74abe7c6dd3cded0b9c7e637d7711f67752f77ac3d58f4eaf8d9dfc83faa9e0fc937945b34be30bf10d79cdc5984127a6f5efe3e1e9b37e6c4bc22f605fcfd072db8ef29</Raw>
-          <X>15.32745</X>
-          <Y>15.32745</Y>
-          <Index>1</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>TWCSSOYGTUSMYDFE</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cad565d73ab3610fd2b3b7ea93dd320894f93717c27717aa779682793a4b70fb979c0200c2d205f10b1f3efbb12c210c7ce7d696219e9687576f7ec8af16241ee9ec8bd28de36a25a15a24dc8375ecb3ce6cd33f32c97b22000461d2b98070e0c889ecc11a1738b85f6fc14624ebd9087d574f1655f16f0caeb2617d5d5845974f265b9588be40d70a36a2ef7697435c9a4dc5e12b2dbed2c5c5ba2de9026ce7819115c5e24918c089e2413c0e5652c2ac92bf9f4b6e55713c9f79264b22cbabdebfbbb6fbdaf9ba2e56b1e95f7b75f1ff86b7b6963989d55b3e5f1d5c4b66c8ca60be35d083b4747c0c230247bcdbd5c6c9736732cfc87bfeabc8a8ac682bf335e7328057ec92caa40541c5abd097903db5abce6094f7e854842c1a3466a83268b8a0262516e8b37d8e532039f7ad6826cd10510e547ad6df89de79b4c42542570cbb732b37abf8661ad9c229dc4c585442940d41ad929206bab0d6854bb50789d97c002c82bd4b581ef53d7a15096df675046fbbc6c4b88d6e2b5234df32a6f32480b819cf8d9d4a2ad92131130ac3ab1074ec7f53ace84f32d9448a3884b4cbead7902692d4aed40b492d79046314e538d18dd54905268641dc5fff6bb69be97c8600168a1886a9fe58c3cb6eb7fa626a819b979bc5b89a22dab5b6c97e7e9f558f5a12c35ffd1e62a1874735c0580a76c30690eb2a1a94a36981c69d5e9a412534a59309bfe29245cc731162c5a177c36edaa389bfec1ab5f1a781279c1253c0851ce5e54f4aa42fd1d240f3c96cf17d4a29462ab31d7b7a15b31cff6e64108cc762c2f74f182b1d062f3102fd8aabb0acd22e5694aa963e360381ce4e0474f64f23c4a039cf8210ec47db4f563c48c9db609109be3e86dbd0ef7131ce97b2c708d2debf8b45d6ab87b9b333eb56d687c2b3b6aec940fdfd8bb1d8f7adafd19d6f9d5f3d8ecb38ee7801fc7e08ce28c47fe1d639b74feb516a1391398f84c8e0a73302e473dbd4e2f9a74e318577550f6aed151e762743dc46834f3cdda35b906235d0f35f9ac6e9fe577aa56234d34363e937498d240ebe10d7a06f6199ee02387ced333b106c3b963de531a7fe0eff34e4c0d547f0743ff681fce70a6d7c4c6b5e376bdaf6a73e861c5138ed6aa77e6830f1d7732aad1b827cf68e9fba358c2a11e87bdd8f4d948c777f360d4fbbd6eeeff5bffc37bc1cced74e8d39feae8182dbd333af6f7d4f4efc166a4c9076d93a3bb3b7adff4774269d7ebd29ffba0bdd12ce8ef8f3dd29d999c46b60a3fd9679fbca78e7b509f4dcfc4638ffcae7feeb7ef9dc0bc1bc63af4f5b7e9927c0597ac9e1950a02fe4e637fcfdf64856e40eec25fefd07a2ff778c</Raw>
-          <X>15.40204</X>
-          <Y>15.40201</Y>
-          <Index>0</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>DQLPUVJPSSYDZXRA</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced59596fdb4812fe2b0dbfac0d2464f3b60cc583449301fcb0334162cc2c90e481229b1617bc86a47cecafdfea8b2c1e92a58c9c995d4c024664b3bbbaeaabaf8e66964bf3e6d6fc50664f7765b1caca6d6cfecaea368d58f3d9f20cd70a1c97d8b66b2c5ccf23dd88bc711d625bb6e1b8be3333a2577d353faece973f3ce619b967759396c59b33cba0673f5c2fd765fc44e045d15c3d26e19bb34ddb5657a6f9f0f060c0b351d67766136d581e9af0f83a0edbd08495e61981c7aba82c5a56b4b74f157b73d6b2c7d6dcb47926dfbdfd70f3abdeeb5db6656b16e61f7efce923bbdf5ed9d4ba94b39a8a456fce6cc3066da41a03151e1ca181b5582ccc4721fb7a595dfbd4352e0dcbb0c8a7f43fcc20bf6d18cba24d98d6248c00b6265d678c44655e85759b83820d693661969135233e2569010635e4cbb9e5d91ec9f32f17e4218d19c9d322cdb739c959d86c6b16938ad5152be234da66614dda92b41b461a3ef501a4bd22611113cf47f25c9b4a79316355272f296bb1806cb6c51ddcb5ac265156360cf41222165825ba4b449295f06f5e6e01f3782466bfca350ba5060741c5f78a366916d7acf84743b60d7b41f40e33bd478f2f3a05104bb302261193d3e96d7c9f3665fd44c6bcbaddf4663555187101bf6f532e3e2d40669ab176885dda90aa2eefc1c898347ccfb02521d7a5290b4032e5169087de075158903c2cd816c21264829a55d9a42d040d81955c656c1ed7087690aac0d2a26cb953ca75d3d6db8883b17e22eb10fe01e9c51ddfad0dc1bf0d01bc4a9006244a1f5bc0478c40f4deb3226505f0e015618f11ab405b2e9f4569928238d08163e21836f8e717d0310bab2f1706b94966ad0f6bc6910695803431bfdd949c3efda642074005d0db8045b05b53466928fc98b69b89c5aff8c813c9b78db034664d7a5748d15c5f7eb7cb47422583ac7a237b3d9a6db4e196ce6225360bb346188282843b879515dc0955e3b409d76906ce823520eb810147e117a64933c1f21a14b89d014af2a21e1a94336e2f2738f7ab34efd533f601799ec474c53a12c6f01600547379f0687e711327140be7301844870e0a172c61649541088500a68c8ea4860a40b8614a622148039300c3b250f1debf9789a45316cc06226b91a44c08ca07b6a3d281363f5c97f74c0092c048b3518980efe90fd2c84c1659b3a7b2906c419e782dd44b42b9377fd9a92a02228390bd17ef9009dbaa2aeb16dc95af8583570725cf3d365b76afbd43bd438c1e78e8fdbf56ef3fdcdefcf2f39570512f5ba590b193208570cae05c166254c81de4c95607aa6f636c030f812be2201409f5f5a4b6f10ce37b68ad3f708c5a2bac793d97cb8d796346843ad216cc133f40e5cb38117433fe17c10e0b879aec4446bad6e47dd9f585f969bbfef7f95b9584984e26887217e6bb4f37ab32dbe6c58fd09c7d3e870a5f8c38a6b4d69549269541661ba7a82ee342f1bc63b54164e5c133e29249b13c6f0dd31414cf5116be38ff1966723b2a91612eceffa926f34a7b71fe5b990bbc3e32286565995f7ce596b7d057eac6d8fcc8a2f633352885de71e150d725e2c10e7c0ffe42ab1b1881ef78c476a9e1f876f0d55cc9eeb459262c4928757cb86085e3c22a06bf97ead742bff0de8349fe82d220845f4fbe13e3013c5fca31714570396acc526b6c39573c3bea82b981232f3ec7b7d55a4fcde5e3a09f1fc31cb596cb095c3926f662f299cbe06b02bc6f242f21cbeee56a7bc5f842cae8f4f57a59f6a5b4dd8131c796bf624d2c2f7ba1f60c941c17e91e23d90b6583a7d651a4bfa530f0a46d62cc5572a9d2c7eeef853c57c954eb849d568fb1c02741f797bd5e1dd64857a13fc62b42be62bd3e0207ff08dc5c851b9dc74deb20d6d20371f3a56d9dad63dda9d427d05805c37981db63da712c52323527119f6631581cc91dfab218886765c3603c56cf284e06fcfa564cfe2ceeda68df5dfeff0be6a489bfb41e0b25db45b671fd0394cfbcde077fe7b7ef90dffe62b17d687e1bdbf2774ea0839c406379b9968a375fee19383d3ec162183fdfdc0f8d747ccee7022f9c8746b605969abf9862aae5629cbabca27cf4cd796b81f290d627e9b1f3c7dc7166fc64211dac191e68bdb40d3adf69bc82d1da63f2bad3c745e7071d279edacb1ff17c81e22241fa26bd5e81e62bd21bdb39e1e8913135e111f6c30eae605bc59520dc516d103a2bdc03557704b79c692ef0514c0819d6680ce3ae7c35f69b90a9d6759c747a5d3a2c92216e83de86db7fa9f4457965560ee293f66d1777fa1ed5f9ae1678728fee1d1df27682bfc24cc8f5917c77ca87493e71d4afddd71337a1032e763990aa7aa238e1aafd5e24dead1edb71dec51cc23d89efceccbda45d8dc1bdcbc1be9ce101ce27837ca7f7c2fbe81aa431d07e423138a8778b5ed649e2379acae96226ee71998d4fbd87d639a05dbe9ac57ac4dbc9bc97ae43735cd25c3d22160fe587ee2d74ee19c7e78be4a9399fa9fe02d7bc811f8f38534c6a8da7384547f366b8aa7ba7c041faeb7c806b15b607e7b380f675349a798fb9b62b36519ceb9a3ea86127cc51bbfa0a9cb78e8e21bdd7287e273df5b8aeee8abd99f8ffaef1877a9d2e0646baefebe73adbddd1be2807eeed45c6e7dd67faae49af77821e4cf78ba7cc07f81cf1ec19c11df1df433951c9eb78abf570fa7dbab5983f7eef338d4f870d8e9d3df80cf88cf1c23ae13c97f47ed33e9f9caf0fdc7fd7b78b43b838e87770cffb1c96da06d5331d7cbeb7659fb6f36cffdc395e7307f575b339c11fcad11875efe6cef0e3ef16c77c93f54efcbd42e726e4eb9dfdc711f9de8ee7b9263019e71be4df49ef760837e7ce00111d9c45b10f07fb1dc1fd409f2b742eb3519c69fb6384e9a896ba47e0f73dbf3d7ed7f8b5fa73d3b37c57f1bbebbbe69f16c3f87b14c8f02ea56fc5bdcafbfc9cc7cf842eaf25e17c2d3918bf3ddf26fe704d41df26263dc6bebe65e6fb5557b38fc913fc7d80e4ce9cd3e6ce8ea27e1fca239d37833d5c9ac99db3fd3afe8e85e328a627f97f2b1d2f7a9eb0d33bc24efff81ab1cfce59fe2b99a7fc0e3d396f9c3046fe48cff33f1d1ffe91bcd9131f93ff437a417ffd5fe4b453d6edb93333b6f15bf9f19279855d9b3f11d75c7db60825f4abf9eefd72697e3257e60db1afe1cf7f0156dc15b2</Raw>
-          <X>15.41724</X>
-          <Y>15.41724</Y>
-          <Index>13</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>XKAUDZWJMITKYTAH</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced54516f9b3010fe2ba7bc0ca41413489a1091542d5da53c6caa926a2f691f8cb9164fc666d894e4dfcf4048d7a9fd051b1282bbf3ddf7ddc71d714c360fe45e89e38b92895075467e60653843bd9fccbcf0325acc61369f7b51104470f69c5ea6102c426f1684e1079e21eb896c1327be3a14025eb1d25cc9d568e2f9a3ab759caaec083620f5f2f04c57a3dc98724948d3349eb53d55bd10cd722c28b1e645460d2536938cc09a4ba6a441691e8e25ae46060f86e4a6107decfa7ef363c0ba1135a6488bfbdbbb2dbed6cbc09f2cfa53ba44b61a055e60d9f434de5168c28ec1248a2272e86aafe3727de94fbd854d09e056a94a7bf0a0b840034c1525ad4c612941d646c6c0251375c6e54be7809c5659432b1c83cea9105d863842c34d0e537f3a063c302c0d989c1ae0cff68940cbb25294e5c03518d5b90435d6d63c4350fda1bfa1c7c004d28a4a8690a269106577ae63f159229599bd8fa0526daa9a19abdd89678a300dda6672d4f0e84cfccb1914c5a30b0597bca80b2bc1b9f890a0513c5f30a1b4edde83eb3e5ad6e7ae5b5186c6ad98f3b7cc5250861958f45499be4f3df0edaa48dbda9b109feb7f2a299501ddb4785c9e143cf1860a7fd5bcb260ef74a8907a3129d73169c773ed925d9dfe74ae995d09cd53810360f247523b0a2eb9d96d1225ea42deda49dd3bad2ae66372ede73ca35b5627c56050cc75be5bda2d6669a8c5749d5d1b4efab0eb7c43f9450f44b64a15ee534bd3d85d1896996c9199bd0f3e04d1c25b44e1046651e80551bb9149bf3bdaf93fcdffc034bbe40ea624d94fec30f84fe4e6abfdebef48423610acedf51b068209a9</Raw>
-          <X>15.36987</X>
-          <Y>15.36987</Y>
-          <Index>0</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>ROUMZDVNCPPZPKYW</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced585b53e33614fe2b9a3c2533ad25df6d26646709dd290f6d19a0bb0f2c0f8e2d63777cab2d93f0ef7b74b1a3d02c24ecd2ed4c0b68241d9dcb773e1d1f27cce7f8e2065fd6c5e37d5d2d8bba4ff047dab23ca6dd6d601062bba18d2c62b8ae6ba151e01b81474cdb46a669f861e8847b24cae80e5f2da7f3779bb2400fb4edf2ba3a9d980699bc5bcc5775f288e0a0ea4e3669743ac9186b4e305eafd706ec8dbabdc75d9cd132c2b0fd31895884c1124f106c4fe2ba62b462378f0d3d9d30ba6138636521cfde5f5e7c1c629d153d5dd1a8bc3cff70451ffa138b9881d4ea1a1a9f4e2cc3023412c60e84b52d10986118e28df0bd98370b9b04866d98e8f7aa5e75aced634613037dca684b5184e282462d4a8bba6e11fcddb7755f25a86ba2184e8ba25e77a0d4442dac6981a2a669eb28ce10ab5154215ad01232826582584651972714b5942be41deab5803f88f32cbfcf74a52e03b768459113a0bc02e23af4796a5a164165f97986ca6893977d39ba07347bad4d776b6d0783715e49e355fd4085790a922e7b9aab31c70dd084f0962b0bfd3602473f73cc573ce01b91f69414600e10b75c75e00fca4211484199a13a153bed784b86ed6cc9083c773f93096d58f6ac1b4b73e399bb1762a09bd75f660a8445ca648401014613cb759f4493b473a8ba19ddc49426dd5edb97cacdd3109afe21089fe5439410e6cd6131c3d7fdea8fe94d9d1794a16b1a31b414d7799ec3d35b75b49de1b3eb8b655df465750e0de276cac96452bfe3fab1d04f067d5e102dfdb3cf5ba84628a1b82e9be2515c25d4d5034faf6e681bad0aca6b8e75689db32caf0405a21ac14e66d346d53ded0c24ee4f1371b7a2127ac651aca34e7007b1590665e804136336fdb566e87d1c03213cd46c2a9e0974c5ed67d35f002adc8433bbe3f93368714387c6573466b7041164864640e0094356007d3608eef05276c46e9ed23485466dc3203002422c2af762366106b9eb12e2c1de035d0f043e9cfb0e0cbee6676aeff1b5236d859d0ffb40cab92e9fb9dc537eb99d172b3b53ea08b9a7e4a91ca35c5ffbca67aa3050159b287c2a8e88a1c5157e956fdf97ba3aa6c14ef8d6f55d390fbabed21d308cb102e5c791f231aee264f023e644cd54eaebba632ece96c321372f94e7a3ccda72a863e07a437efeb17718ef8f2fd6a1e47fccf5084cbe5aebdc0abf5a7dd88eaa459583c06d6f710c395981ac51db5283289b440e2bd4f6fcce06ec89ca39398c73bd5ede245f9e837b60beb6e4e6d95c071f5fca75786e3c0dffd39cbd5d3fbe5e575ff37cc24c1239bed877940fe7d05ae5ba7bead2dd7727fff7a637eb4d5fdb1bf47ea5d7e7c8ab8ef5a5da08950e7da197b9bb98c75c5379d77bed8e897d680fb065df3ba807f0e1693de35bf73b7557be76f65d38b18ee0c4537df435ef80a127fc17de751ed9ed55e6f3391c520b3bbcbf948325ebf655b5fb42effedb67a5637372555cd59787f7cb80ff9be5f9bd3f5b7947d41b1ffebfacdefeb1beb0c01f908397b7267c8d2277f005723ec79f9089afe197ff3f099fd56d42dbc5029ffd0447d778892f1031dc05fcfc051020ae45</Raw>
-          <X>8.003662</X>
-          <Y>7.860107</Y>
-          <Index>0</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>PIURYBPVGGHVLSTQ</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ccd566d4fe33810fe2b165f0e242eb6f3daa2c2aa7461854eba43805627213eb889437397c6b9c4d9c2bfbfb163376e5ad85ded4a7788e2c69e79e69967661c66337cf3806f45f9fa2caa4529ba0c7fe68d2c52de3ed2c8f3e3491822ea875e12d200d1d823819fc04ee44d02eac7683af162328902b54312ea47ce8e0fd631f59ff0dde278f6e1655da22fbc690b519d1f518f1c7db8982d45f68ae0a06acf5e72767eb492b23ec378b3d978f0ec89e619b7e98aaf1986c75f332619064f7c84e0f12c1595e4957c78adf9f991e42f12afe4baeccfe6b7379f6daccbb2e34bced6b71fafeff897eecc2774d25bb5354fcf8f7ccf07363d8d1d0a9b4033a0d3e914bf68ec8b597d3125be47d1275ef186951efa585445f58cdaaec91988865895a18d68fe1e76da152b4b948a755dbea24d21574841f8da527d0bbc19ae011961057ff5e7e2eaf6e1e68fdfcfbe013a170d4a57459935bcfaa5455dcb4db42547356fd685943c4352ec450f7762ceb32f452b9a57f495dc8a2a2dbb8c9fa26527116b38aa84446501617414d8674d7b8a245b961cd6b2abd21584eea04e6a5ff15f0a2157ad87ae5e1830024c918f723241d0a629a41bfd14b5b283764959d3f0d23c42fd51c996a26152f16f259350f356315982e98a55cf0a434586b8bc31dc10e896172fb26b8c8820562b2a56a2e7468835b89c2adeb5a846f43780c1610f1a19528610008ae69773d4a6a25691ea4680963d070e198a57ce4d8286db8ef27d272c4ace1a745d0a6002bf9f1a8899a1fb1ad2f6d01ca5fa38d7c7adda34e554f174450312a15ab485c2075a2a21a6fe6e5893215603270685183a4371cc78e6a1df2a60a7f29282f7615875083e3ee0acd3c06a822f4ef07db7fcebf85269beb09a3f28a54ff0e5fdcd4294ddbafa08d3fbd8db6ceb62aad1f07fba0274650752fd6a5e1e4227c7bf4323ced394d71af1e4f8da18cd8dd1c9f125d41f3d88a2e412dd418ddb9327c55ac2ed61af3f7cc753f9483c424844e3908631ea1f82681a4788d2c09b2494221a520f0e9327bce8afa07696f33c272498c2071c029f109fc34a6185e73021248ee0c3fb3581cd18cee2b4b7d336213c4f8d8d5d93fe2c01d0c4fac5c6373058416fa3f7944f687c54ccdcf82cbf1d47adf164e0a73912630778710636a4df4fa64e2cf89e84bdafdadbd3c23fcc73cf2ee85792f59f10b845801906e6bb2a08f886e017029f50f9b0ff97867adff86db59b184e698faffd4d4ff889a3bfc15167efd6c3776c88d357d9500b5d8fc8c927ec79fd947a86a33a5193576c7c8341038bfb9fce87f5094cae4617ada1a3a9c609877e481c9db57fee9ca706d7d1fca0de6ecd0ca6e6953a76d49ca70eef748893440effc96e0ded998d3fc61ff7b58e930fb928bc2470b45618b6e79cfed8d133efb5fea13979af260657fb5b6dbfb7eea963170ef8b61fb5adad879dc7f47ddfd8d17adb03b67656033ad4deed7f8bb53d9f1a1df9a85efe80b9c3d5d6c46830d663afce4e7d6d5fbcdb6f84ecde5b769627830656a7b7ee3af72eb27780e664e799f47c13a707edfc6c7349f7fb3b2103d68ff4beee55478fed6c5bbc78f7cc9d996d1d1d4df5bc408cd0efd7ed9d6df108d9ef5b32e4bf735fbed50fd1680ef39e8bde7766e5e00cbed76fcefdfdd6fb3a0c861eb1b3a2f7e381cb4ecf38df43a7cedbfbcbe81905261f6766b7f70f756a722076fc46ece410e63befbabdba1c7aef054617f75d9b0ff51aebbad333e3ff03e8febe8e69df33ee7b67d427db9c26dff77fc1b8cf62f71d65f55e3adc2372786ecc7db6a3e9a8365b9f9fad7dfc3373bec0d728c48b478a08224ff8f26a36c3f778816f907f013fff025b2436b4</Raw>
-          <X>15.26787</X>
-          <Y>15.07092</Y>
-          <Index>8</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>EJNDMBRXQZCBRBGX</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cd5576d6fe3360cfe2b423e25c06ac99663d9459a439beb61f9722bdaee7640af1f1c47493cd89667cb4dfbef474bb2ada46feb86615801c19248910fc98752339be1e52dbe12d9d356148b4c346bfc8d57324d787de74e1d8f05be875c9738210d60d2efc0c40f7d8642eab0c8a7c14b3be6d43dbe5e8c679f1ef30c3df0aa4e457136721d32fa349fadc4fa0981a0a84f1f37f1d9682765798af17ebf7760ed886a8beb64c7f318c3f2641dcb18c3493c42b03c4d442179216f9f4a7e3692fc51e29dcc332d3bbf5a7eeb7c5d640d5ff138bffafce59a3f34a71e7143ad55973c391b798e0768348c03087baa10b85114e147657b3e2be701f11d1fddf058d60ebadd7154c314ed78badd4924362846fb58f20a2599a8b944f14a3c7024416f931669bd439b4c880ad5bb38cbd08a2397a1b480186bf463ec5382f2fcc704e5a09a37398a8b3572234b219c1a85f85129e43cae9b8aaf9114ca8714658b411a588ec669bc1542b61eebb26a8a6d7ba2e2b2a98a7616a32cdd48b0538a3a95903667864b8816e136e4cbef8bcbabdbe52f5f6f4ef5f6dc75d0f9619c690146a44833985742e4680351c6a84e8b6dc6914892a68c0b484702ccaac19128b227c0598966bb03bdb24a1fc01c80df00f754e02ddcd64822f25c14a8a9415aa1b2596569a256075155fc8f26359980132558dfa7728754b94c3473cf41cb0254eb740dcc49e30cadf73ccb00236a8a54d63fa9cc0db5b423ac879a95bcca5329b5b3b686d3a14434fc680d5f61c87ba55521e1b683e6137cd3ac7e1fffa6d02e14da09beb8592e44d6e4c567689bbb71cbd48382d9b4cd9b5a6a328e4edc68642069388040017226e3f38ac72d868528125e1593f1cfeaf864ec120f9da05fbf2e6f2ebf4fee5b3412bab2bb56f0354fe4dd097108212c22ae1b81b65af95e14504251143984f90cee0c2f70483875eff14277773ddbf0cd86101ac08013d427c4e3e60beb296c0653182ed8863d46b55cc9601d845adeaed9916ebbd7c9830806d3eb5e067e83c0cc5d63830de7db73cc33f2d676a2cf747e7a3ba01f78461658788ef0b5be140eaebfca4e68c98c7d65c7b3620a8d8f440fa5ef0d7629c82833fb9d7d3af85639039917eabc52aa73adf4d77a7891b5b630b66b36353a5dacadccb77c471ff0dd7ea76ff86e731fbee27b6dd5976a193379e8f0a89c6f5ece7f2763e479fdd97b5cea38f7121fdfaa13373efde7755331101d838a936b8e3e8bc31bf8d6c7cc9feb751c56fe231d5bc7e33e3fc4e27064e491c905d77192b51e3e9c9b424cf06ce9b9e9391ff47dd0f7b9ce078db57ecb852e4ffe3fe9a76888afef4b13a7922587facc1bfaa6e74a70d847bd1d6af1940db67a3e503d549e2dbe1ff4bad1e9f8dd73c5be57b8b6cda2437e755855bd99d5ffee501fa51399bbc4ca9dcdd9fe2ea196eca8379f71ef382774c8991a1d0788899f1efaedef2423575c4e061c2f9dfb5b7dd1f1dd357ea2b7fbdc8e8391a3bc338be726d72fbe3586f7d4b3386cf1b0c7d4f1a7eb2b6ef5906bc5e71bdfd3216e9b775daefab7a0bb4b9257de8ebff88e7db4dfdebdbfecba90c166f74e281bc7778c5d9be377aa8be7bdb7829ab7e2fff84efd8bff0ffcb76fe01c7f413e5edcb98820728f2f2ee1e7e50d5ee025f2e6f0f727dfd38841</Raw>
-          <X>15.27722</X>
-          <Y>15.24902</Y>
-          <Index>0</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>TPTVQKEHOLQWOMGJ</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ced585b6fa33814fe2b565fb695ba60eea14a3b9a6676567d59556d35fbd09907424c611770044ed3eeafdf636c83212443db3cad76241a6c9fcb77ae3ecc7c6ede3c98b7347f7da2e522a79b95f98d542c8b49fd687946801ddb415e60f88e65cd50bb032f7ee8fac8770c075bb6bfbba1787e98778bd3f9a7972247cfa4aa335a5e9e58063ef974355fd2d52b8283b2be7849a2cb9394b1f585696eb75b03d606ad9ecc3a4e491199b0fc7515b1c8044ef304c1f222a62523257b785d93cb13465e9899b22217679f6f6fbe295dd7f9862c4954dc7ef97a479e371736b66682aa5e93f8f2c4366c402360f4206c9d06811586a1f9d2c8be9aafaf7cec1a1efabd8a96e83aaa6a43bc2ee11525b442db88910ac539ad09ab519d46798e625aacf357b4cd588a7c1cea2c826049d0baa2cfd98aac102d114b09aa6101c23837975533c46873a02b4051d9325424aa1a06636eae0128325bb48685eeb9b83ff9297ae8497f92503a24ae8db212bc5ea3efa716f63d5414dfcf504ecb27546465566c8a7358c50063852c8dd6c192b4885e38154a2a5af4a135782152a45c6520ce73354d4e8025bb5032c23e62998deef8696759a76bd732c7eff485d688611abe4e7d0c4946aa3c2b09a2c96e08c65d20e5416c6829ddcd65db9ac5be857788b9740a7faa8665606f68b8e896d619cbb8d8643c075b63b3b266f00a41ca4a14a19456d93f5031518ed652c639729c0ececc1dc0e178473da6e21b2de933692027c052a728c929544041a27a53815e99b08cae95e39eaa6cbde6910782248ac939383b266bc8ed3482646683eae1f514a759beaa48f94b8d363591a5c445c86a728df0bc0df59bcc47d0ce5ae35ccfdbb5de0eb468cd8e6ebd48d894644f29533439dd8203dad49529b18ce2bf45520359044b96b2cd72b4bb04866b5850f000452c6c58367964f26e7b7566de6f967f9db6b973665edfdf2c68be29ca2fd05f1f4f175c5c9495accbdaa6a63a1f0342824acaba9ec503352c0ce3ecf40fa0f91cf30047cb9c88f5ade4393b7da0590ef573476971f683a362d0c9d54564de91983d628451101a18bb6e8802b8586c2f80fb64213a7f3d4f489260ecf8f060785c8c6d02bf1efcc2da0d300ee0050a0dfbb6dc936bbe1f38827e1fad3fa4e57ba0cb4fc41e5f0781a401ddbed7edfb40efc792d691676e27a7d99b497db1785a3ee0f1574083c57e106aba42a96b26f65adbc3b7dbb217832df0363458cae276f842bf2f6de5bf0d3dc72b752b6c2dbfd3e7d17db663f7d05f8e90d7ca4df6e878630c9a334b609e6483f487f2dfa80dc08b57e219cd47fe6b095e6fc427de88bc66ffbdfefc490e4c8d3fb7c151fca1f499d36152b964cf847d8eca49c9cff3983fb6cc61158f464ea0d128d9a1cc7d4ff2c5033ea71f6b15bf46f7549c8ec4b90fe34aea988de0913d40d584da7b57ce8ce5a127f4b6f6c9b3d626e9338edd71df10176e7320ecde6bf3be181cd3e629752279bd117993eb64aaff8f55278eb067523c42199363d5c81bf2686a2c7da7e3d3fb6a834de150b4899079acde7cf45a3ee437adefb73e3fd06b877ee63827d7a1dff5c88f62dd8957d2dfebe5ae6ec358fdc9d941d9e12979923750fd67e82b7fffbcf1d1396b4acd295fa93941a7edcd27a1865bdec18d6c39c73536469d7dba2c5bce4007fd116b3dc099980b3379b7be3717867978ccfef3b3fb4fc6ae9d0955bd0c73d2efdba062da9ea93ea7cdd38d6ed5b71da1b7ede5536641791628bf1ee84d6def0fe59cabfb2ee8f2b0c5e04bdb65bf6a6713d96bd57e800773abcc637df66ccfdff9fd30fc0e69631d4a3e57f31bcfd140ab2daf93d9f28e7c73ecf8e2d0f787bac343cd2fffc55a57f7d3acaf6f6fadb972567beffd3476df041375fbb2cffc5fe71fabf33d33a67a6f640562ddd6f8213caaae03dcaff909b3e8c119c0d6702ffbfda557571ab6b646941eb7b3a3c905fb2735fadeffaf08b499437d1b6bdfc87aaeece5b175de2bf32b72cdc5a38530c23fccebdfe673f3de5c9837c8be827fff02b109f917</Raw>
-          <X>15.70313</X>
-          <Y>15.6947</Y>
-          <Index>2</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Name>OKVHUMGCWMRFGSDQ</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789ccd575f73a33610ff2a1abfd49eb9434280c019c73789af379787b61927737dc8e50163116801f900c7b96fdf1592003b0e493a99b499282069fffc76f7b7eb7836c317d7f852643fef44b1c8c4768dbff1b24e235eddd89e4502cfb591e35a2eb33dd41ed8aec508f3287288e5fa8ee3ed9d506a3b53a9e4f853d7bfc5cbc578f6e921cfd03d2fab5414a723db22a34ff3d94aac7f22b828aa9387383c1d2575bd39c178b7db59b0b7447987ab28e1798861fb711dd621064d3c42b03d894451f3a2befeb9e1a7a39a3fd438a9f34cdd9d5d5e7c33beceb32d5ff130bffcfc65c9efb72794d88192aa363c3a1d518b021a05630fc2ce6910d8d3e9143f34b6e7b3cd9c11c772d1428435fa2ac4df150a8b35ba4a7876cf2b4b9d27cd7995845986561c65220a6bbe46bbb44ed20289822311a33ae1a8e46194a0322cee38c8039a344e4110841c1258c6ea634b2e0119484c85be8f6d0285c9f3ef1394a7459a6ff306901bf42428255a227c50122b71cf1b0431e854098a33214a6b86371021c2324c09c0b128fa6355d5e536925ebfa677095a4ac816fa33e12547218a321e964a1dc1ef5d29b6e0bdda8411dc6699d8417ed0262ce19d6728dc6c4a2143ae05a0443ce33954b0012cc124d24195ae4d62d20a01ce528a0a0d032afa41c97210ae4d227bd75db61cb7cb41c0bc8314689f6bbea9934133b46786d9fb99b4d0f511dcadea7015624858a8555a1876afb4d4f30ebca9b477d4516afc21e27c5d1dd5fd7034b31d42d64368fb2f4138988f864258f6f57c82afb6abbfc66da74cf0f9d5c54264dbbcf80c9d7c333e4391e91659ea92ffd8a625f00cc801c88029f700b86d9b5eafa05d922a7ad8de087d84348f34a5159d4149111aa1c9f87751a3b32802f4e12ae393714360b4947626e3df78f14b85ae459af11a2d85c827b712750d33c5cc44bce4517d431041ae075390050cb953cb73d9d4bec50b3583aa59cce3981087c122b0e00fe5f074e1097b17f60cee215dc43767813e936b05e78e3a97320c749996f3a4ae94f5604520c7d4bbaf7d3c659f3d61df37f66c654fae469e2abbcd7ba4f59cce66e35fdbf67d789feaf340bd338da5d1e33d5b72cfb49edbc5d2ecb5cf068bc6d59e9b3cf8bd78357e9f683d47fb66fad9c3d8c724ebd1d425e8723698d737ca93acbff4dbc7c37a7e8d2f0a7bc7d618e5d3d85fab45a7bdbdb133557bdfd33247b8d3f80f5ee19fea4506fccb388301ff54e5c4e4f358dddb7ae938fc5eed9b3b93d7587141d68cacd53aac65db6b54f742ac30343c7195beafb972581fd7c4e177febd639c349cf17bb9ebf3c0d64f4763d7fa3e1d88891cbcfbda66acf1f6ead872de60eaf935dc6cf4fcfd39d2e8920ecb9ebcd7e3b4ade47cd26178d493ae3aeff38c92ce0ed33c601a7b3b870e38f9880b476ae09bbe76c9b3b3c2f0a7cda7e9637a04eb73dc9892767ed16800afb78fb98d7560d6bdcaf70be74fd30b07f3eec9fe0ef4e7d3d06c79aeb787eaa86be5f7eefe939cd057e4847573f7d5393133e18df9fca218df7bae33b23fabece1185ec285bdbc3f170355bcfd57dc7d6676bff47f922763f2b45f3d97cde78bc1ff66710ecda3f7e01b7b05dfe4f2ff677c7bb7b930c75f908b1737367c6720b7f8fcd7d90c5fe105be40740e3fff009d3637aa</Raw>
-          <X>15.08521</X>
-          <Y>14.60657</Y>
-          <Index>8</Index>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-        <ToolChestItem Version="1">
-          <Resources>
-            <ID>789c0b0af673f2f4088f08f50e700a09f0f3010029b404e6</ID>
-            <Data>789c7dd03d0f82301006e0bfd2b000835c4b401c90c44098d4183e8c893a8029860130a535f1df5b300e064bbbdc0dcfbd97f37dc85e0f0a3b5af482514845c9873ed9426260cb45758bd688a08aebb2d44c389dbf642f9a92b2b8634dc12137741342842d6c7bc35b412c7f841c8823c499909353c30c822b44b303c8c41da41bf0426a85d446692be998bb51e5f6d527384204e3c9ba998a5dec25fe077f428f2a7d13f2a4b3b905bb539eb7350fbbf649595f77ed705e4c88eb39d80b823725d0807e</Data>
-          </Resources>
-          <Name>MCHAGSLTNSUCRXVH</Name>
-          <Type>Bluebeam.PDF.Annotations.AnnotationPolygon</Type>
-          <Raw>789cb5566d6fe24610fe2b23be14a49ed76f181c114e84bc08a54923e0d2bbe6f2c1d8e3e0c6f6baf612c8bfefecdac64e21bd546aa36cbc3bafcfcc3cbbca68c4664b76c7e3d7279e4e63be09d83de622f2b17830fa9aed1a960b86ae7636349266e31ea86a49e5f5c8e6d3eee8f32e89e105f322e2e969c7d0f4cee7f168c5835720455a9cec42efb4b316223b616cbbdd6a74d678fec40a7f8d89c7e8f829f084c7c89375808e273e4f05a662f99ae16947e04eb0b548e25237b99bddd7b9cee20daed04beece2fe7f8b239317563585a1519faa71d5333094d09e30d84ada51018aeebb29d8a3d1e65638bca1ac08d97e286ca89d22798c6e8e55eeaa306bfad3147f0c097220863ce73a0dfa79c6fd2008accf311a20262ee7b02038852f0e837f6f90b4a3b2ec87f1b1508545c18a564c2a53e96cacccb05f010c43a4784220ab0f819bc20880495e9c590b420f9352428d6d27d8590e5fc857ccaa4becff340e9b7915883aa4933084c50ed4d6dc4322a17d8be66d25ff27cebe5014c328ae6f96b0d260a7bd1a4b11c4a40332be07bd735fa9024df7b5bca0b499446c92681ad6a11150a0166941b773e62508069378e8ea12bc73688fff70f93541cf7d862b3faa3bb88d2e71e5b6292dd7a09ceced9743ebbfa75feedeafefafce2dbd7af13a5bba2a166b758086af843e57360787b7376f16531bbbabefef2fbf562b27c3c7095290efdce16b3298f37497a4ea47fe87e90577f67cd7b5469e8414e39feb989720c3480254de59f52a46a52829783ee801c2cb9fdc2f933913a7a263a95468ad64d3eb3235947dc2d83931b0d7e85628b982a2ae4480f4e417e61b4139b1c0b8adaebde720113df279a78ab187b5d75d1e052415b4840bdaea13bf0096e30fda980393534e73ce93dca310a7a17ea878dcdd1170f3ae8600c6ccd1d9a43304c5d6d1ed9b47c478a518861a8eb96454ba7d5d77513e93ba02f9ded40d78997ba4332877403b99c6a4f068e5be96a7b0ae2f8a55efa299bdadf2ae532beb4ed938f336cc5ea977269afbe476229b953c9c372ede5edfda08a199698557ebbd40d28eea0cab3c7a497b5489ddad7f1ad2ab75de1b01b5b071bbc6ff67ee51736bd3ac01756315bf50f060d86bd4f1547e1775afd6e63098fe4f70f73d635ab5c6d5fa7d25778ea59d418141eb7cca7b0ca1ef9ad7c76b5dc2a86dbc26cb4b0fc4b2e391fe1528d6f78a4f616a764ed7b3ed47dfcd14cadd61ccdcafe58fe7a6e55ffa4ece87d925fe32d67eadcefda9be5570fcaf5a3b8b6d3e055b88c06bbd21b552f5afdd8d73a6ceea6fd0e8febfbf1919e2baccedbded679dab14c3a5b6e5983d56f718596e936fdade7b5d7d731ddf2acee79d09ac991b7a57de7549c9ad3fadbf929d9b09973cd931ab39c8b657fb036a7aa4d3facad3ddbff668dd925d86cfa60d0bbaf3fb2b30bfa6777c1a66c06e6987efe02a0f6dbd7</Raw>
-          <X>15.49139</X>
-          <Y>8.071411</Y>
-          <Index>0</Index>
-          <Child>
-            <Type>Bluebeam.PDF.Annotations.AnnotationLine</Type>
-            <Raw>789cad536d6fa24010fe2b1bee43e183cc82f5da52a411508f48ad01edcb1973019c0a0db004966afffd2d78bdf4bedf12c23eccecccf3cccc9a26f8d32d38396b703fa96b76fcbadf81e76c354209dd81ef938146c5674a7470a28af0ba45b8c7a8696b2cb0e4eb8f0a1ba20d298439abb08384c22ae3491ab425d174f0d6e06725ba99706f325682bf1da923f2f96af44a1dedc00de557567283fcc0fc1d799644e26cc56f09c7131f447976288d44e4c3fa96e422dc20c5ec9072431baad79d5bc272561bdf66332a960281239b77a72227ef587749c792a652e9ce3263b6ff20c25036c6e9351a4b29e79501703c1e558155561fa049522c221070b08f7804e22448444023110cff681e4b1d314879919f6d9395f7f899cbce5b8c312a56ee2cc0f7d6d0a9767df66a2a4cc692aeea820d69f8472e02f5baff876ce92cec1f51c761af49bbb9b98153cfd6322b4bbf105d954ca82c13ba8a580af8518cb9ac40d8c66fb28fe581a7e44b9f95cfa6836d3fc46f2b5eff0ac2a5edfd787ade2c56f67ab5f4618d4515ac615eb3b6ea8127901378f387e065feb870a72fcfcf93ded0bb2cb1e15979584605c2f2de9e6e426fbe586c7e2ec2c91a5cac78ba2933be15c3da151c966d11633d63751171d8c8170a3884aa946adae8ea925e812b4689c2cc3d8f6818ca8a65edc00e3d87e56d51baa2955b5991978c93499288f0519ca322fe28bb4e34ef7274830a01267c3b18a9fab52ea28b7b30fcdeed89a60d77e09c47a091cf255460462ee1ef75b143c1f68968108aa7676db37a8fb525d66f74a2182b</Raw>
-            <X>-79.88159</X>
-            <Y>5.5</Y>
-            <Index>1</Index>
-          </Child>
-          <Mode>drawing</Mode>
-        </ToolChestItem>
-      </BluebeamRevuToolSet>
     </ToolSet>
   </Record>
   <Record Key="HeaderFooter">
@@ -1398,120 +666,6 @@
       <LeafColor>-16777216</LeafColor>
       <Path>Construction.xml</Path>
       <Hidden>False</Hidden>
-      <root>
-        <bookmark dname="Cover Sheet" manual="1" />
-        <bookmark dname="General Information" manual="0">
-          <bookmark dname="Sheet Index" manual="1" />
-          <bookmark dname="G-000" manual="1" />
-          <bookmark dname="G-100" manual="1" />
-          <bookmark dname="G-200" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Civil" manual="0">
-          <bookmark dname="C-000" manual="1" />
-          <bookmark dname="C-100" manual="1" />
-          <bookmark dname="C-200" manual="1" />
-          <bookmark dname="C-300" manual="1" />
-          <bookmark dname="C-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Landscape" manual="0">
-          <bookmark dname="L-000" manual="1" />
-          <bookmark dname="L-100" manual="1" />
-          <bookmark dname="L-200" manual="1" />
-          <bookmark dname="L-300" manual="1" />
-          <bookmark dname="L-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Architectural Demolition" manual="0">
-          <bookmark dname="AD-000" manual="1" />
-          <bookmark dname="AD-100" manual="1" />
-          <bookmark dname="AD-200" manual="1" />
-          <bookmark dname="AD-300" manual="1" />
-          <bookmark dname="AD-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Architectural" manual="0">
-          <bookmark dname="A-000" manual="1" />
-          <bookmark dname="A-100" manual="1" />
-          <bookmark dname="A-200" manual="1" />
-          <bookmark dname="A-300" manual="1" />
-          <bookmark dname="A-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Structural" manual="0">
-          <bookmark dname="S-000" manual="1" />
-          <bookmark dname="S-100" manual="1" />
-          <bookmark dname="S-200" manual="1" />
-          <bookmark dname="S-300" manual="1" />
-          <bookmark dname="S-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Mechanical" manual="0">
-          <bookmark dname="M-000" manual="1" />
-          <bookmark dname="M-100" manual="1" />
-          <bookmark dname="M-200" manual="1" />
-          <bookmark dname="M-300" manual="1" />
-          <bookmark dname="M-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Electrical" manual="0">
-          <bookmark dname="E-000" manual="1" />
-          <bookmark dname="E-100" manual="1" />
-          <bookmark dname="E-200" manual="1" />
-          <bookmark dname="E-300" manual="1" />
-          <bookmark dname="E-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Plumbing" manual="0">
-          <bookmark dname="P-000" manual="1" />
-          <bookmark dname="P-100" manual="1" />
-          <bookmark dname="P-200" manual="1" />
-          <bookmark dname="P-300" manual="1" />
-          <bookmark dname="P-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Fire Protection" manual="0">
-          <bookmark dname="FP-000" manual="1" />
-          <bookmark dname="FP-100" manual="1" />
-          <bookmark dname="FP-200" manual="1" />
-          <bookmark dname="FP-300" manual="1" />
-          <bookmark dname="FP-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Telecom" manual="0">
-          <bookmark dname="T-000" manual="1" />
-          <bookmark dname="T-100" manual="1" />
-          <bookmark dname="T-200" manual="1" />
-          <bookmark dname="T-300" manual="1" />
-          <bookmark dname="T-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Security" manual="0">
-          <bookmark dname="SE-000" manual="1" />
-          <bookmark dname="SE-100" manual="1" />
-          <bookmark dname="SE-200" manual="1" />
-          <bookmark dname="SE-300" manual="1" />
-          <bookmark dname="SE-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Interiors" manual="0">
-          <bookmark dname="I-000" manual="1" />
-          <bookmark dname="I-100" manual="1" />
-          <bookmark dname="I-200" manual="1" />
-          <bookmark dname="I-300" manual="1" />
-          <bookmark dname="I-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-        <bookmark dname="Other" manual="1">
-          <bookmark dname="O-000" manual="1" />
-          <bookmark dname="O-100" manual="1" />
-          <bookmark dname="O-200" manual="1" />
-          <bookmark dname="O-300" manual="1" />
-          <bookmark dname="O-400" manual="1" />
-          <bookmark dname="Other" manual="1" />
-        </bookmark>
-      </root>
     </Template>
     <Active>Construction</Active>
   </Record>
@@ -1590,57 +744,6 @@
         <Item>Form.ComboBox</Item>
         <Item>Form.Button</Item>
         <Item>Form.DigitalSignature</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
-      <Name>toolStripMeasure</Name>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>Measure.Tool</Item>
-        <Item>Measure.Calibrate</Item>
-        <Item />
-        <Item>Measure.Length</Item>
-        <Item>Measure.Polylength</Item>
-        <Item>Measure.Perimeter</Item>
-        <Item>Measure.Area</Item>
-        <Item>Measure.Volume</Item>
-        <Item>Measure.AreaCutout</Item>
-        <Item>Measure.AreaEllipseCutout</Item>
-        <Item>Measure.DynamicFill</Item>
-        <Item>Measure.Count</Item>
-        <Item>Measure.Diameter</Item>
-        <Item>Measure.Angle</Item>
-        <Item>Measure.Radius</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
-      <Name>toolStripAppearance</Name>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>DropDown.ColorFill</Item>
-        <Item>DropDown.Opacity</Item>
-        <Item>DropDown.HatchPattern</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
-      <Name>toolStripRedaction</Name>
-      <Module>Redaction</Module>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>Markup.Redaction</Item>
-        <Item>Document.ApplyRedactions</Item>
       </Items>
     </ToolStrip>
     <ToolStrip>
@@ -1730,6 +833,111 @@
       </Items>
     </ToolStrip>
     <ToolStrip>
+      <Name>toolStripControlPoint</Name>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>ControlPoint.AddMode</Item>
+        <Item>ControlPoint.SubtractMode</Item>
+        <Item>ControlPoint.ConvertMode</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
+      <Name>toolStripRotateDocument</Name>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>Document.RotateCounterclockwise</Item>
+        <Item>Document.RotateClockwise</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
+      <Name>toolStripOrder</Name>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>Markup.BringToFront</Item>
+        <Item>Markup.SendToBack</Item>
+        <Item>Markup.BringForward</Item>
+        <Item>Markup.SendBackward</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
+      <Name>toolStripRedaction</Name>
+      <Module>Redaction</Module>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>Markup.Redaction</Item>
+        <Item>Document.ApplyRedactions</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
+      <Name>toolStripDMS</Name>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>Combo.DMS</Item>
+        <Item>DMS.Login</Item>
+        <Item>DMS.Open</Item>
+        <Item>DMS.SaveAs</Item>
+        <Item>DMS.CheckIn</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
+      <Name>toolStripAppearance</Name>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>DropDown.ColorFill</Item>
+        <Item>DropDown.Opacity</Item>
+        <Item>DropDown.HatchPattern</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
+      <Name>toolStripMeasure</Name>
+      <X>0</X>
+      <Y>0</Y>
+      <Visible>False</Visible>
+      <New>True</New>
+      <Location>Top</Location>
+      <Items>
+        <Item>Measure.Tool</Item>
+        <Item>Measure.Calibrate</Item>
+        <Item />
+        <Item>Measure.Length</Item>
+        <Item>Measure.Polylength</Item>
+        <Item>Measure.Perimeter</Item>
+        <Item>Measure.Area</Item>
+        <Item>Measure.Volume</Item>
+        <Item>Measure.AreaCutout</Item>
+        <Item>Measure.AreaEllipseCutout</Item>
+        <Item>Measure.DynamicFill</Item>
+        <Item>Measure.Count</Item>
+        <Item>Measure.Diameter</Item>
+        <Item>Measure.Angle</Item>
+        <Item>Measure.Radius</Item>
+      </Items>
+    </ToolStrip>
+    <ToolStrip>
       <Name>toolStripAnnotation</Name>
       <X>0</X>
       <Y>0</Y>
@@ -1741,19 +949,6 @@
         <Item>Markup.FileAttachment</Item>
         <Item>Document.Flatten</Item>
         <Item>Edit.EraseContent</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
-      <Name>toolStripControlPoint</Name>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>ControlPoint.AddMode</Item>
-        <Item>ControlPoint.SubtractMode</Item>
-        <Item>ControlPoint.ConvertMode</Item>
       </Items>
     </ToolStrip>
     <ToolStrip>
@@ -1836,47 +1031,6 @@
       </Items>
     </ToolStrip>
     <ToolStrip>
-      <Name>toolStripDMS</Name>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>Combo.DMS</Item>
-        <Item>DMS.Login</Item>
-        <Item>DMS.Open</Item>
-        <Item>DMS.SaveAs</Item>
-        <Item>DMS.CheckIn</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
-      <Name>toolStripOrder</Name>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>Markup.BringToFront</Item>
-        <Item>Markup.SendToBack</Item>
-        <Item>Markup.BringForward</Item>
-        <Item>Markup.SendBackward</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
-      <Name>toolStripRotateDocument</Name>
-      <X>0</X>
-      <Y>0</Y>
-      <Visible>False</Visible>
-      <New>True</New>
-      <Location>Top</Location>
-      <Items>
-        <Item>Document.RotateCounterclockwise</Item>
-        <Item>Document.RotateClockwise</Item>
-      </Items>
-    </ToolStrip>
-    <ToolStrip>
       <Name>toolStripText</Name>
       <X>0</X>
       <Y>3</Y>
@@ -1922,7 +1076,7 @@
     <ToolStrip>
       <Name>toolStripFile</Name>
       <X>3</X>
-      <Y>1235</Y>
+      <Y>1246</Y>
       <Visible>False</Visible>
       <Location>Top</Location>
       <Items>

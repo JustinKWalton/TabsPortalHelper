@@ -434,3 +434,6 @@ FodyWeavers.xsd
 
 # Reverse-engineering scratchpad — don't ship
 TabsPortalHelper/Markup_Extract/
+# Local debug artifacts
+TabsPortalHelper/Custom Columns.xml
+TabsPortalHelper/Document1.pdf
