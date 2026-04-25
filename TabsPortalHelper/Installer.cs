@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -10,7 +10,7 @@ namespace TabsPortalHelper
     static class Installer
     {
         const string AppName = "TABS Portal Helper";
-        const string AppVersion = "2.3.0";
+        const string AppVersion = "2.4.0";
         const string UninstallRegKey = @"Software\Microsoft\Windows\CurrentVersion\Uninstall\TabsPortalHelper";
         const string StartupRegKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
         const string TabsRegKey = @"Software\TabsPortalHelper";

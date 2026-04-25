@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -16,12 +16,17 @@ namespace TabsPortalHelper
     ///
     /// BSI column mapping (MUST match the TABSportal.bpx profile's UserDefined column ordering
     /// and the generate-markup-summary edge function's extractMarkups):
-    ///     BSI[0] = user Note     (the text in the "Note" column)
+    ///     BSI[0] = Note            (the user's free-form note)
     ///     BSI[1] = Comment Status
-    ///     BSI[2] = Element       (aka ItemCategory)
+    ///     BSI[2] = Element         (was: ItemCategory / "Subject" pre-v2.4)
     ///     BSI[3] = Location
+    ///     BSI[4] = Issue           (NEW in v2.4 — was: Element pre-v2.4)
     /// DO NOT reorder these without updating both TABSportal.bpx
-    /// and the edge function's bsiStrs[0..3] mapping.
+    /// and the edge function's bsiStrs[0..4] mapping.
+    ///
+    /// /Subj (PDF built-in Subject field) is no longer written. The Subject
+    /// column was removed from the TABSportal profile in v2.3 and the helper
+    /// stopped populating it in v2.4.
     /// </summary>
     static class ClipboardHelper
     {
@@ -61,13 +66,13 @@ namespace TabsPortalHelper
 
         public class MarkupRequest
         {
-            public string? Subject      { get; set; }
-            public string? Location     { get; set; }
-            public string? ItemCategory { get; set; }   // → BSI[2] (Element)
-            public string? Status       { get; set; }   // → BSI[1]
-            public string? Note         { get; set; }   // → BSI[0] — the user's free-form note
-            public string? Contents     { get; set; }   // plain text — /Contents + /RC body
-            public string? RcHtml       { get; set; }   // optional XHTML; auto-generated from Contents if null
+            public string? Note     { get; set; }   // → BSI[0] — user's free-form note
+            public string? Status   { get; set; }   // → BSI[1] — Comment Status
+            public string? Element  { get; set; }   // → BSI[2] (was: ItemCategory)
+            public string? Location { get; set; }   // → BSI[3]
+            public string? Issue    { get; set; }   // → BSI[4] — NEW in v2.4
+            public string? Contents { get; set; }   // plain text — /Contents + /RC body
+            public string? RcHtml   { get; set; }   // optional XHTML; auto-generated from Contents if null
         }
 
         public class MarkupResult
@@ -172,12 +177,12 @@ namespace TabsPortalHelper
 
         static string RewritePdfDict(string pdfDict, MarkupRequest req)
         {
-            string contents     = req.Contents     ?? "";
-            string subject      = req.Subject      ?? "";
-            string location     = req.Location     ?? "";
-            string itemCategory = req.ItemCategory ?? "";
-            string status       = req.Status       ?? "";
-            string note         = req.Note         ?? "";   // BSI[0] — the user's note, NOT the code content
+            string contents = req.Contents ?? "";
+            string note     = req.Note     ?? "";   // BSI[0]
+            string status   = req.Status   ?? "";   // BSI[1]
+            string element  = req.Element  ?? "";   // BSI[2] (was: ItemCategory)
+            string location = req.Location ?? "";   // BSI[3]
+            string issue    = req.Issue    ?? "";   // BSI[4] — NEW in v2.4
 
             // Normalize newlines to CR — Bluebeam's native Contents hex
             // uses 000D (CR) for paragraph breaks.
@@ -185,14 +190,18 @@ namespace TabsPortalHelper
 
             string rcHtml = req.RcHtml ?? BuildXhtmlFromPlainText(contents);
 
-            pdfDict = ReplacePdfLiteralString(pdfDict, "/Subj", subject);
-            // BSI column order is contractual -- MUST match TABSportal.bpx UserDefined[0..3]
-            // and the edge function's extractMarkups bsiStrs[0..3] mapping.
+            // /Subj is no longer written. The Subject column was removed from
+            // the TABSportal profile in v2.3 and the helper stopped populating
+            // it in v2.4. The template's /Subj() entry stays empty.
+
+            // BSI column order is contractual -- MUST match TABSportal.bpx UserDefined[0..4]
+            // and the edge function's extractMarkups bsiStrs[0..4] mapping.
             pdfDict = ReplaceBsiColumnData(pdfDict,
-                note:     note,         // BSI[0]
-                status:   status,       // BSI[1]
-                element:  itemCategory, // BSI[2]
-                location: location);    // BSI[3]
+                note:     note,      // BSI[0]
+                status:   status,    // BSI[1]
+                element:  element,   // BSI[2]
+                location: location,  // BSI[3]
+                issue:    issue);    // BSI[4]
             pdfDict = ReplacePdfLiteralString(pdfDict, "/RC", rcHtml);
             pdfDict = ReplacePdfHexString(pdfDict, "/Contents", EncodeContentsHex(contents));
 
@@ -261,11 +270,13 @@ namespace TabsPortalHelper
         }
 
         /// <summary>
-        /// Writes a 4-element PDF array into the /BSIColumnData field.
+        /// Writes a 5-element PDF array into the /BSIColumnData field.
         /// Order MUST match the canonical TABS column schema:
-        ///   BSI[0] = note, BSI[1] = status, BSI[2] = element, BSI[3] = location
+        ///   BSI[0] = note, BSI[1] = status, BSI[2] = element,
+        ///   BSI[3] = location, BSI[4] = issue
         /// </summary>
-        static string ReplaceBsiColumnData(string dict, string note, string status, string element, string location)
+        static string ReplaceBsiColumnData(string dict,
+            string note, string status, string element, string location, string issue)
         {
             int keyIdx = dict.IndexOf("/BSIColumnData[", StringComparison.Ordinal);
             if (keyIdx < 0) return dict;
@@ -275,10 +286,11 @@ namespace TabsPortalHelper
             if (close < 0) return dict;
 
             string newArray = "["
-                + "(" + EscapePdfLiteral(note)     + ")"   // BSI[0] — user note (was incorrectly the code contents)
+                + "(" + EscapePdfLiteral(note)     + ")"   // BSI[0] — user note
                 + "(" + EscapePdfLiteral(status)   + ")"   // BSI[1] — comment status
-                + "(" + EscapePdfLiteral(element)  + ")"   // BSI[2] — element
+                + "(" + EscapePdfLiteral(element)  + ")"   // BSI[2] — element (was: ItemCategory)
                 + "(" + EscapePdfLiteral(location) + ")"   // BSI[3] — location
+                + "(" + EscapePdfLiteral(issue)    + ")"   // BSI[4] — issue (NEW)
                 + "]";
 
             return dict.Substring(0, open)

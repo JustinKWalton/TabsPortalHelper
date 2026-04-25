@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -10,15 +10,16 @@ namespace TabsPortalHelper
     {
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
-        const string Version = "2.3.0";
-        const int HttpPort = 52874;
+
+        const string Version  = "2.4.0";
+        const int    HttpPort = 52874;
 
         public TrayApp()
         {
-            // â”€â”€ Load tray icon from embedded resource â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // -- Load tray icon from embedded resource --
             var icon = LoadEmbeddedIcon();
 
-            // â”€â”€ Build context menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // -- Build context menu --
             var menu = new ContextMenuStrip();
 
             var header = new ToolStripMenuItem("TABS Portal Helper  v" + Version)
@@ -53,22 +54,21 @@ namespace TabsPortalHelper
             exitItem.Click += (s, e) => ExitApp();
             menu.Items.Add(exitItem);
 
-            // â”€â”€ Create tray icon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // -- Create tray icon --
             _trayIcon = new NotifyIcon
             {
-                Icon = icon,
-                Text = "TABS Portal Helper",
+                Icon             = icon,
+                Text             = "TABS Portal Helper",
                 ContextMenuStrip = menu,
-                Visible = true
+                Visible          = true
             };
-
             _trayIcon.DoubleClick += (s, e) => ShowStatus();
 
-            // â”€â”€ Start HTTP server â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // -- Start HTTP server --
             _server = new HttpServer(HttpPort);
             _server.Start();
 
-            // â”€â”€ Show startup balloon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // -- Show startup balloon --
             _trayIcon.ShowBalloonTip(
                 3000,
                 "TABS Portal Helper",
@@ -79,14 +79,14 @@ namespace TabsPortalHelper
         void ShowStatus()
         {
             var driveRoot = DriveHelper.FindDriveRoot();
-            var bluebeam = BluebeamHelper.FindBluebeam();
+            var bluebeam  = BluebeamHelper.FindBluebeam();
 
             MessageBox.Show(
                 $"TABS Portal Helper  v{Version}\n\n" +
-                $"HTTP Server:  localhost:{HttpPort}  âœ“\n\n" +
-                $"Google Drive:  {driveRoot ?? "âš  Not detected"}\n\n" +
-                $"Bluebeam Revu:  {bluebeam ?? "âš  Not found"}",
-                "TABS Portal Helper â€” Status",
+                $"HTTP Server:  localhost:{HttpPort}  \u2713\n\n" +
+                $"Google Drive:  {driveRoot ?? "\u26A0 Not detected"}\n\n" +
+                $"Bluebeam Revu:  {bluebeam ?? "\u26A0 Not found"}",
+                "TABS Portal Helper \u2014 Status",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
@@ -117,14 +117,14 @@ namespace TabsPortalHelper
             {
                 MessageBox.Show(
                     "Unexpected error while installing the Bluebeam profile:\n\n" + ex.Message,
-                    "TABS â€” Bluebeam Profile",
+                    "TABS \u2014 Bluebeam Profile",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
             using var dlg = new ProfileInstallDialog(
-                "TABS â€” Bluebeam Profile",
+                "TABS \u2014 Bluebeam Profile",
                 preamble: string.Empty,
                 result);
             dlg.ShowDialog();

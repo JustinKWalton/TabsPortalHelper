@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -14,7 +14,7 @@ namespace TabsPortalHelper
         private readonly int _port;
         private HttpListener? _listener;
         private CancellationTokenSource? _cts;
-        const string Version = "2.3.0";
+        const string Version = "2.4.0";
 
         public HttpServer(int port)
         {
@@ -282,13 +282,13 @@ namespace TabsPortalHelper
 
                 var result = ClipboardHelper.PutMarkupOnClipboard(new ClipboardHelper.MarkupRequest
                 {
-                    Subject      = dto.Subject,
-                    Location     = dto.Location,
-                    ItemCategory = dto.ItemCategory,
-                    Status       = dto.Status,
-                    Note         = dto.Note,       // NEW — user's free-form note → BSI[0]
-                    Contents     = dto.Contents,
-                    RcHtml       = dto.RcHtml,
+                    Note     = dto.Note,       // BSI[0]
+                    Status   = dto.Status,     // BSI[1]
+                    Element  = dto.Element,    // BSI[2] (was: ItemCategory)
+                    Location = dto.Location,   // BSI[3]
+                    Issue    = dto.Issue,      // BSI[4] — NEW in v2.4
+                    Contents = dto.Contents,
+                    RcHtml   = dto.RcHtml,
                 });
 
                 WriteJson(ctx, result.Success ? 200 : 500, new
@@ -309,15 +309,21 @@ namespace TabsPortalHelper
             }
         }
 
+        /// <summary>
+        /// Wire payload for /clipboard/bluebeam-markup. Field names map 1:1
+        /// to ClipboardHelper.MarkupRequest. Renaming or removing fields
+        /// here requires a coordinated update on the FlutterFlow side
+        /// (sendMarkupToBluebeam.dart payload keys).
+        /// </summary>
         class ClipboardMarkupDto
         {
-            public string? Subject      { get; set; }
-            public string? Location     { get; set; }
-            public string? ItemCategory { get; set; }
-            public string? Status       { get; set; }
-            public string? Note         { get; set; }   // NEW — user's free-form note (goes to BSI[0])
-            public string? Contents     { get; set; }
-            public string? RcHtml       { get; set; }
+            public string? Note     { get; set; }   // → BSI[0] — user's free-form note
+            public string? Status   { get; set; }   // → BSI[1] — Comment Status
+            public string? Element  { get; set; }   // → BSI[2] (was: ItemCategory)
+            public string? Location { get; set; }   // → BSI[3]
+            public string? Issue    { get; set; }   // → BSI[4] — NEW in v2.4
+            public string? Contents { get; set; }
+            public string? RcHtml   { get; set; }
         }
 
         class ComposeRequestDto
