@@ -24,9 +24,10 @@ namespace TabsPortalHelper
     /// DO NOT reorder these without updating both TABSportal.bpx
     /// and the edge function's bsiStrs[0..4] mapping.
     ///
-    /// /Subj (PDF built-in Subject field) is no longer written. The Subject
-    /// column was removed from the TABSportal profile in v2.3 and the helper
-    /// stopped populating it in v2.4.
+    /// /Subj (PDF built-in Subject field) is actively cleared in
+    /// RewritePdfDict — the embedded template.bin may have a stale literal
+    /// baked in, so we force-empty /Subj on every markup. The Subject column
+    /// was removed from the TABSportal profile in v2.3.
     /// </summary>
     static class ClipboardHelper
     {
@@ -190,9 +191,12 @@ namespace TabsPortalHelper
 
             string rcHtml = req.RcHtml ?? BuildXhtmlFromPlainText(contents);
 
-            // /Subj is no longer written. The Subject column was removed from
-            // the TABSportal profile in v2.3 and the helper stopped populating
-            // it in v2.4. The template's /Subj() entry stays empty.
+            // Defensively clear /Subj. The embedded template.bin may have a
+            // stale literal baked in (e.g. "Passenger Loading Zone" from when
+            // it was captured). We never populate Subject from incoming data,
+            // so force it empty here regardless of what the template contains.
+            // No-ops if the template omits /Subj entirely.
+            pdfDict = ReplacePdfLiteralString(pdfDict, "/Subj", "");
 
             // BSI column order is contractual -- MUST match TABSportal.bpx UserDefined[0..4]
             // and the edge function's extractMarkups bsiStrs[0..4] mapping.
