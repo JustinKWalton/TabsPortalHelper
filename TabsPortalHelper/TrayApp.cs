@@ -11,7 +11,7 @@ namespace TabsPortalHelper
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
 
-        const string Version  = "2.4.0";
+        const string Version  = "2.5.4";
         const int    HttpPort = 52874;
 
         public TrayApp()

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -10,11 +10,11 @@
     <UseWindowsForms>true</UseWindowsForms>
 
     <!-- App metadata -->
-    <Version>2.4.0</Version>
+    <Version>2.5.4</Version>
     <Company>Texas Accessibility Solutions</Company>
     <Product>TABS Portal Helper</Product>
-    <Description>Background helper for TABS Portal PWA — opens Drive files in Bluebeam Revu</Description>
-    <Copyright>© 2026 Texas Accessibility Solutions</Copyright>
+    <Description>Background helper for TABS Portal PWA ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â opens Drive files in Bluebeam Revu</Description>
+    <Copyright>ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2026 Texas Accessibility Solutions</Copyright>
 
 <!-- Single self-contained exe -->
 <SelfContained>true</SelfContained>
