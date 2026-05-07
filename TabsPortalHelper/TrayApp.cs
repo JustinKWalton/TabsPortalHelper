@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -11,7 +11,7 @@ namespace TabsPortalHelper
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
 
-        const string Version  = "2.5.4";
+        const string Version  = "2.6.2";
         const int    HttpPort = 52874;
 
         public TrayApp()

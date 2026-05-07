@@ -437,3 +437,7 @@ TabsPortalHelper/Markup_Extract/
 # Local debug artifacts
 TabsPortalHelper/Custom Columns.xml
 TabsPortalHelper/Document1.pdf
+
+# TABSportal helper-specific
+installer-payload/
+v260/
