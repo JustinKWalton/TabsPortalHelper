@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -11,7 +11,7 @@ namespace TabsPortalHelper
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
 
-        const string Version  = "2.6.2";
+        const string Version  = "2.7.0";
         const int    HttpPort = 52874;
 
         public TrayApp()
@@ -38,9 +38,24 @@ namespace TabsPortalHelper
             reinstallItem.Click += (s, e) => Installer.RegisterStartup();
             menu.Items.Add(reinstallItem);
 
-            var profileItem = new ToolStripMenuItem("Install Bluebeam Profile...");
+            var bluebeamSubmenu = new ToolStripMenuItem("Bluebeam");
+
+
+            var profileItem = new ToolStripMenuItem("Install Profile...");
+
             profileItem.Click += (s, e) => InstallBluebeamProfile();
-            menu.Items.Add(profileItem);
+
+            bluebeamSubmenu.DropDownItems.Add(profileItem);
+
+
+            var scrubFileItem = new ToolStripMenuItem("Scrub PDF File...");
+
+            scrubFileItem.Click += (s, e) => ScrubPdfFileFromTray();
+
+            bluebeamSubmenu.DropDownItems.Add(scrubFileItem);
+
+
+            menu.Items.Add(bluebeamSubmenu);
 
             menu.Items.Add(new ToolStripSeparator());
 
@@ -176,6 +191,44 @@ namespace TabsPortalHelper
                 _trayIcon?.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        // ----------------------------------------------------------------
+        // Tray menu handlers for the Bluebeam submenu
+        // ----------------------------------------------------------------
+        void ScrubPdfFileFromTray()
+        {
+            using var ofd = new OpenFileDialog
+            {
+                Title           = "Select PDF to scrub",
+                Filter          = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*",
+                CheckFileExists = true,
+                Multiselect     = false,
+            };
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+
+            var result = BsiAnnotColumnsScrubber.Scrub(ofd.FileName);
+            var fileName = Path.GetFileName(ofd.FileName);
+
+            switch (result.Status)
+            {
+                case BsiAnnotColumnsScrubber.Status.Scrubbed:
+                    _trayIcon.ShowBalloonTip(3000, "Scrub complete",
+                        "Removed Bluebeam column overrides from " + fileName + ".",
+                        ToolTipIcon.Info);
+                    break;
+                case BsiAnnotColumnsScrubber.Status.AlreadyClean:
+                    _trayIcon.ShowBalloonTip(3000, "Already clean",
+                        fileName + " has no column overrides -- nothing to do.",
+                        ToolTipIcon.Info);
+                    break;
+                case BsiAnnotColumnsScrubber.Status.Failed:
+                default:
+                    _trayIcon.ShowBalloonTip(5000, "Scrub failed",
+                        result.Message ?? "Unknown error.",
+                        ToolTipIcon.Error);
+                    break;
+            }
         }
     }
 }

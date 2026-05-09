@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -10,7 +10,7 @@
     <UseWindowsForms>true</UseWindowsForms>
 
     <!-- App metadata -->
-    <Version>2.6.2</Version>
+    <Version>2.7.0</Version>
     <Company>Texas Accessibility Solutions</Company>
     <Product>TABS Portal Helper</Product>
     <Description>Background helper for TABS Portal PWA ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â opens Drive files in Bluebeam Revu</Description>
@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.4" />
+    <PackageReference Include="PdfSharp" Version="6.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +46,9 @@
   <ItemGroup>
     <EmbeddedResource Include="TABSportal.bpx">
       <LogicalName>TabsPortalHelper.TABSportal.bpx</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom_Columns.xml">
+      <LogicalName>TabsPortalHelper.Custom_Columns.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\installer-payload\cropper-bundle.zip">
       <LogicalName>TabsPortalHelper.cropper-bundle.zip</LogicalName>

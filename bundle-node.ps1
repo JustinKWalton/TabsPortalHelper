@@ -1,4 +1,4 @@
-# bundle-node.ps1
+﻿# bundle-node.ps1
 # Build script: download portable Node.js + place cropper.js + zip it all up
 # into a single cropper-bundle.zip that gets embedded in TabsPortalHelper.exe
 # as a resource. Run this BEFORE building the helper.
@@ -92,45 +92,32 @@ Write-Host "Staged node.exe at $nodeOutDir\node.exe"
 # ------------------------------------------------------------------
 $cropperOutDir = Join-Path $InstallerPayloadDir "cropper"
 
-# Quick health check: if the staged cropper already has cropper.js + node_modules\pdf-lib,
-# skip the costly tear-down + npm install. To force a fresh build, delete
-# the installer-payload\cropper\ folder before running.
-$pdfLibCheck = Join-Path $cropperOutDir "node_modules\pdf-lib\package.json"
-$pakoCheck   = Join-Path $cropperOutDir "node_modules\pako\package.json"
-$cropperJsExists = Test-Path (Join-Path $cropperOutDir "cropper.js")
-
-if ((Test-Path $pdfLibCheck) -and (Test-Path $pakoCheck) -and $cropperJsExists) {
-    Write-Host "Cropper deps already installed - refreshing cropper.js only" -ForegroundColor Yellow
-
-    Copy-Item -Path (Join-Path $CropperSourceDir "cropper.js") -Destination $cropperOutDir -Force
-    Copy-Item -Path (Join-Path $CropperSourceDir "package.json") -Destination $cropperOutDir -Force
-    if (Test-Path (Join-Path $CropperSourceDir "package-lock.json")) {
-        Copy-Item -Path (Join-Path $CropperSourceDir "package-lock.json") -Destination $cropperOutDir -Force
-    }
-} else {
-    if (Test-Path $cropperOutDir) {
-        Remove-Item $cropperOutDir -Recurse -Force
-    }
-    New-Item -ItemType Directory -Path $cropperOutDir | Out-Null
-
-    Copy-Item -Path (Join-Path $CropperSourceDir "cropper.js") -Destination $cropperOutDir
-    Copy-Item -Path (Join-Path $CropperSourceDir "package.json") -Destination $cropperOutDir
-    if (Test-Path (Join-Path $CropperSourceDir "package-lock.json")) {
-        Copy-Item -Path (Join-Path $CropperSourceDir "package-lock.json") -Destination $cropperOutDir
-    }
-
-    Push-Location $cropperOutDir
-    try {
-        Write-Host "Installing cropper dependencies..."
-        & npm install --omit=dev --no-audit --no-fund
-        if ($LASTEXITCODE -ne 0) {
-            throw "npm install failed (exit $LASTEXITCODE). Try running it manually in $cropperOutDir to see the full error."
-        }
-    }
-    finally {
-        Pop-Location
-    }
+# Copy pre-installed cropper tree from source. node_modules MUST exist in
+# tools\cropper\ before running this script (one-time setup):
+#
+#   cd tools\cropper
+#   npm.cmd install --omit=dev --no-audit --no-fund
+#
+# Why not run npm install here: the portable Node zip we download is
+# node-only (no npm bundled), and PowerShells & npm install against the
+# system npm.ps1 mangles the first argument (install -> pm). Doing the
+# install once into the source tree side-steps both problems.
+$sourceModules = Join-Path $CropperSourceDir "node_modules"
+if (-not (Test-Path $sourceModules)) {
+    throw "tools\cropper\node_modules is missing. Run once before bundling: cd $CropperSourceDir; npm.cmd install --omit=dev --no-audit --no-fund"
 }
+
+if (Test-Path $cropperOutDir) {
+    Remove-Item $cropperOutDir -Recurse -Force
+}
+New-Item -ItemType Directory -Path $cropperOutDir | Out-Null
+
+Copy-Item -Path (Join-Path $CropperSourceDir "cropper.js")   -Destination $cropperOutDir
+Copy-Item -Path (Join-Path $CropperSourceDir "package.json") -Destination $cropperOutDir
+if (Test-Path (Join-Path $CropperSourceDir "package-lock.json")) {
+    Copy-Item -Path (Join-Path $CropperSourceDir "package-lock.json") -Destination $cropperOutDir
+}
+Copy-Item -Path $sourceModules -Destination $cropperOutDir -Recurse
 
 Write-Host "Staged cropper at $cropperOutDir"
 
