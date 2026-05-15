@@ -48,7 +48,7 @@ namespace TabsPortalHelper
                 var driveRoot = DriveHelper.FindDriveRoot();
                 var driveMsg = driveRoot != null
                     ? $"\n\nGoogle Drive detected at:\n{driveRoot}"
-                    : "\n\nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  Google Drive root not detected.\nMake sure Drive for Desktop is installed and signed in.";
+                    : "\n\n⚠ Google Drive root not detected.\nMake sure Drive for Desktop is installed and signed in.";
 
                 // Launch the tray app first so the user sees the icon while the dialog is open.
                 LaunchTrayApp();
@@ -59,7 +59,7 @@ namespace TabsPortalHelper
                     $"{AppName} v{AppVersion} installed successfully!\n\n" +
                     $"The helper is now running in your system tray (look for the TABS icon " +
                     $"near the clock) and will start automatically with Windows.\n\n" +
-                    $"If you downloaded an installer file, that download can now be deleted ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â " +
+                    $"If you downloaded an installer file, that download can now be deleted — " +
                     $"the helper has been copied to its permanent location." + driveMsg;
 
                 // TABSportal Bluebeam profile: idempotent. Works whether Revu is
@@ -74,7 +74,7 @@ namespace TabsPortalHelper
                 {
                     // Never fail the whole install because profile setup hit an error.
                     MessageBox.Show(
-                        preamble + "\n\nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  Bluebeam profile setup skipped: " + cex.Message,
+                        preamble + "\n\n⚠ Bluebeam profile setup skipped: " + cex.Message,
                         AppName,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -88,7 +88,7 @@ namespace TabsPortalHelper
             {
                 MessageBox.Show(
                     $"Installation failed:\n{ex.Message}",
-                    $"{AppName} ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Error",
+                    $"{AppName} — Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -121,7 +121,7 @@ namespace TabsPortalHelper
             {
                 MessageBox.Show(
                     $"Uninstall failed:\n{ex.Message}",
-                    $"{AppName} ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Error",
+                    $"{AppName} — Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
