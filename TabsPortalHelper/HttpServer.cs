@@ -15,7 +15,7 @@ namespace TabsPortalHelper
         private readonly int _port;
         private HttpListener? _listener;
         private CancellationTokenSource? _cts;
-        const string Version = "2.7.0";
+        // Version is derived from the assembly (see AppInfo) — never hardcode it here.
 
         public HttpServer(int port)
         {
@@ -99,7 +99,7 @@ namespace TabsPortalHelper
             WriteJson(ctx, 200, new
             {
                 status = "ok",
-                version = Version,
+                version = AppInfo.Version,
                 driveRoot = DriveHelper.FindDriveRoot(),
                 bluebeam = BluebeamHelper.FindBluebeam()
             });

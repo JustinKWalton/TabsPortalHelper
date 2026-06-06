@@ -11,7 +11,7 @@ namespace TabsPortalHelper
         private readonly NotifyIcon _trayIcon;
         private readonly HttpServer _server;
 
-        const string Version  = "2.7.0";
+        // Version is derived from the assembly (see AppInfo) — never hardcode it here.
         const int    HttpPort = 52874;
 
         public TrayApp()
@@ -22,7 +22,7 @@ namespace TabsPortalHelper
             // -- Build context menu --
             var menu = new ContextMenuStrip();
 
-            var header = new ToolStripMenuItem("TABS Portal Helper  v" + Version)
+            var header = new ToolStripMenuItem("TABS Portal Helper  v" + AppInfo.Version)
             {
                 Enabled = false,
                 Font = new Font(SystemFonts.MenuFont!, FontStyle.Bold)
@@ -97,7 +97,7 @@ namespace TabsPortalHelper
             var bluebeam  = BluebeamHelper.FindBluebeam();
 
             MessageBox.Show(
-                $"TABS Portal Helper  v{Version}\n\n" +
+                $"TABS Portal Helper  v{AppInfo.Version}\n\n" +
                 $"HTTP Server:  localhost:{HttpPort}  \u2713\n\n" +
                 $"Google Drive:  {driveRoot ?? "\u26A0 Not detected"}\n\n" +
                 $"Bluebeam Revu:  {bluebeam ?? "\u26A0 Not found"}",
