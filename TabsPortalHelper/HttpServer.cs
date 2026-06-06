@@ -338,6 +338,7 @@ namespace TabsPortalHelper
                     success          = result.Success,
                     bytesWritten     = result.BytesWritten,
                     dataStringLength = result.DataStringLength,
+                    versionRewrite   = result.VersionRewrite,
                     error            = result.Error,
                 });
             }

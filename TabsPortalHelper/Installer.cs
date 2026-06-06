@@ -10,7 +10,7 @@ namespace TabsPortalHelper
     static class Installer
     {
         const string AppName = "TABS Portal Helper";
-        const string AppVersion = "2.7.0";
+        const string AppVersion = "2.7.1";
         const string UninstallRegKey = @"Software\Microsoft\Windows\CurrentVersion\Uninstall\TabsPortalHelper";
         const string StartupRegKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
         const string TabsRegKey = @"Software\TabsPortalHelper";

@@ -81,6 +81,7 @@ namespace TabsPortalHelper
             public bool    Success          { get; set; }
             public int     BytesWritten     { get; set; }
             public int     DataStringLength { get; set; }
+            public string? VersionRewrite   { get; set; }   // diagnostic: how the embedded Revu version was adapted
             public string? Error            { get; set; }
         }
 
@@ -90,6 +91,13 @@ namespace TabsPortalHelper
             {
                 byte[] templateBytes = LoadTemplate();
                 byte[] modifiedBytes = BuildModifiedBlob(templateBytes, req, out int dataStringLen);
+
+                // Adapt the BinaryFormatter type stamps to the INSTALLED Revu
+                // build. template.bin is frozen at the version it was captured
+                // from; Revu binds clipboard types by EXACT assembly version, so
+                // without this a Revu auto-update silently breaks Ctrl+V paste.
+                modifiedBytes = RewriteRevuVersionToInstalled(modifiedBytes, out string? versionNote);
+
                 // Clipboard requires an STA thread. We create one per call so
                 // this works even from thread-pool contexts like HttpListener.
                 Exception? err = null;
@@ -108,6 +116,7 @@ namespace TabsPortalHelper
                     Success          = true,
                     BytesWritten     = modifiedBytes.Length,
                     DataStringLength = dataStringLen,
+                    VersionRewrite   = versionNote,
                 };
             }
             catch (Exception ex)
@@ -395,6 +404,167 @@ namespace TabsPortalHelper
             }
             bytes.Add((byte)value);
             return bytes.ToArray();
+        }
+
+        // ── Revu assembly-version adaptation ─────────────────────────────────
+        //
+        // The embedded template.bin is a BinaryFormatter object graph captured
+        // from a specific Revu build; every Bluebeam type is bound to e.g.
+        // "Bluebeam.Revu, Version=21.9.0.16288, Culture=neutral, PublicKeyToken=…".
+        // BinaryFormatter binds types by EXACT assembly version, so when Revu
+        // auto-updates (e.g. 21.9 → 21.10) the installed deserializer can no
+        // longer bind the stale-versioned types and Ctrl+V silently no-ops.
+        //
+        // Fix: before writing, rewrite every embedded "Bluebeam.Revu, Version=X"
+        // to match the version of the INSTALLED Bluebeam.Revu.dll, fixing up the
+        // LEB128 length prefix of each containing type/assembly-name string.
+        // This self-heals across Revu updates with no recapture needed.
+        // (We only touch Bluebeam.Revu stamps — mscorlib/System.Drawing names
+        // are pinned to stable 4.0.0.0 and are left alone.)
+
+        static readonly byte[] RevuVersionAnchor =
+            Encoding.ASCII.GetBytes("Bluebeam.Revu, Version=");
+
+        static byte[] RewriteRevuVersionToInstalled(byte[] blob, out string? note)
+        {
+            note = null;
+
+            Version? installed = TryGetInstalledRevuVersion();
+            if (installed == null) { note = "installed Revu version unknown — left as-is"; return blob; }
+            string vNew = installed.ToString();
+
+            int aPos = IndexOf(blob, RevuVersionAnchor, 0);
+            if (aPos < 0) { note = "no Bluebeam.Revu version stamp found — left as-is"; return blob; }
+
+            int vStart = aPos + RevuVersionAnchor.Length;
+            int vEnd = vStart;
+            while (vEnd < blob.Length && (IsAsciiDigit(blob[vEnd]) || blob[vEnd] == (byte)'.')) vEnd++;
+            int vOldLen = vEnd - vStart;
+            string vOld = Encoding.ASCII.GetString(blob, vStart, vOldLen);
+
+            if (vOld == vNew) { note = $"version already {vNew} — no rewrite"; return blob; }
+
+            byte[] vNewBytes = Encoding.ASCII.GetBytes(vNew);
+            int delta = vNewBytes.Length - vOldLen;
+
+            // Collect (length-prefix fixup + version replacement) edits for every
+            // "Bluebeam.Revu, Version=<vOld>" occurrence in the blob.
+            var edits = new List<(int Pos, int OldLen, byte[] New)>();
+            int search = 0;
+            while ((aPos = IndexOf(blob, RevuVersionAnchor, search)) >= 0)
+            {
+                int vpos = aPos + RevuVersionAnchor.Length;
+                search = vpos;
+                if (vpos + vOldLen > blob.Length ||
+                    Encoding.ASCII.GetString(blob, vpos, vOldLen) != vOld)
+                    continue;   // a differently-versioned stamp; skip defensively
+
+                if (!TryLocateContainingString(blob, vpos, out int cLen, out int pStart, out int pLen))
+                {
+                    // If we can't safely resolve a length prefix, abort the whole
+                    // rewrite rather than emit a corrupt (unpasteable) blob.
+                    note = $"could not resolve length prefix near offset {vpos} — left as-is";
+                    return blob;
+                }
+
+                edits.Add((pStart, pLen, EncodeVarInt(cLen + delta)));   // bump LEB128 length prefix
+                edits.Add((vpos, vOldLen, vNewBytes));                   // swap version digits
+                search = vpos + vOldLen;
+            }
+
+            if (edits.Count == 0) { note = "nothing to rewrite"; return blob; }
+
+            edits.Sort((a, b) => a.Pos.CompareTo(b.Pos));
+            var outBuf = new List<byte>(blob.Length + edits.Count * 2);
+            int cur = 0;
+            foreach (var e in edits)
+            {
+                if (e.Pos < cur) { note = "overlapping edits — left as-is"; return blob; }   // safety
+                for (int k = cur; k < e.Pos; k++) outBuf.Add(blob[k]);
+                outBuf.AddRange(e.New);
+                cur = e.Pos + e.OldLen;
+            }
+            for (int k = cur; k < blob.Length; k++) outBuf.Add(blob[k]);
+
+            note = $"rewrote Bluebeam.Revu version {vOld} → {vNew} ({edits.Count / 2} stamp(s))";
+            return outBuf.ToArray();
+        }
+
+        /// <summary>
+        /// Given a byte offset that lies INSIDE a BinaryFormatter length-prefixed
+        /// string (a type or assembly name), find that string's content length and
+        /// the position/size of its LEB128 length prefix. Returns false if the
+        /// boundary can't be resolved confidently.
+        /// </summary>
+        static bool TryLocateContainingString(byte[] buf, int inside,
+            out int cLen, out int pStart, out int pLen)
+        {
+            cLen = pStart = pLen = 0;
+
+            // Maximal run of type-name characters surrounding the offset.
+            int rs = inside; while (rs > 0 && IsTypeNameByte(buf[rs - 1])) rs--;
+            int re = inside; while (re < buf.Length - 1 && IsTypeNameByte(buf[re + 1])) re++;
+
+            // Candidate A — clean: the LEB128 prefix terminates at rs-1 and the
+            // string content is exactly [rs..re].
+            if (rs > 0)
+            {
+                int lenA = re - rs + 1;
+                int valA = DecodeVarIntBack(buf, rs - 1, out int psA, out int plA);
+                if (valA == lenA) { cLen = lenA; pStart = psA; pLen = plA; return true; }
+            }
+
+            // Candidate B — a single-byte prefix (length < 128) was itself a
+            // type-name-legal byte (e.g. 0x55 = 'U' = 85) and got absorbed into
+            // the run; real content is [rs+1..re].
+            int lenB = re - rs;
+            if (lenB >= 0 && lenB < 0x80 && buf[rs] == lenB)
+            { cLen = lenB; pStart = rs; pLen = 1; return true; }
+
+            return false;
+        }
+
+        static bool IsAsciiDigit(byte b) => b >= (byte)'0' && b <= (byte)'9';
+
+        static bool IsTypeNameByte(byte b) =>
+            (b >= (byte)'0' && b <= (byte)'9') ||
+            (b >= (byte)'A' && b <= (byte)'Z') ||
+            (b >= (byte)'a' && b <= (byte)'z') ||
+            b == (byte)'.' || b == (byte)',' || b == (byte)' ' || b == (byte)'=' ||
+            b == (byte)'`' || b == (byte)'[' || b == (byte)']' || b == (byte)'+' || b == (byte)'_';
+
+        /// <summary>Decode a LEB128 varint whose terminal byte is at <paramref name="endIdx"/>.</summary>
+        static int DecodeVarIntBack(byte[] buf, int endIdx, out int startIdx, out int prefixLen)
+        {
+            int pStart = endIdx;
+            while (pStart > 0 && (buf[pStart - 1] & 0x80) != 0) pStart--;
+            int value = 0, shift = 0, i = pStart;
+            while (i <= endIdx)
+            {
+                byte b = buf[i++];
+                value |= (b & 0x7F) << shift;
+                if ((b & 0x80) == 0) break;
+                shift += 7;
+                if (shift > 28) break;
+            }
+            startIdx = pStart;
+            prefixLen = i - pStart;
+            return value;
+        }
+
+        static Version? TryGetInstalledRevuVersion()
+        {
+            try
+            {
+                string? exe = BluebeamHelper.FindBluebeam();
+                if (exe == null) return null;
+                string? dir = Path.GetDirectoryName(exe);
+                if (dir == null) return null;
+                string dll = Path.Combine(dir, "Bluebeam.Revu.dll");
+                if (!File.Exists(dll)) return null;
+                return AssemblyName.GetAssemblyName(dll).Version;
+            }
+            catch { return null; }
         }
 
         // --- Byte array search -------------------------------------------
