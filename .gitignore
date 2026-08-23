@@ -441,3 +441,6 @@ TabsPortalHelper/Document1.pdf
 # TABSportal helper-specific
 installer-payload/
 v260/
+
+# Claude Code scratch worktrees
+.claude/
