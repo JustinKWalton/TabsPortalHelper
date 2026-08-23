@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -83,6 +84,7 @@ namespace TabsPortalHelper
                     case "/folder":                   HandleFolder(ctx, query);       break;
                     case "/scrub-file":               HandleScrubFile(ctx, query);   break;
                     case "/process-plan":             CropperEndpoint.Handle(ctx).GetAwaiter().GetResult(); break;
+                    case "/bluebeam/recent":          HandleBluebeamRecent(ctx, query); break;
                     default:
                         WriteJson(ctx, 404, new { error = "Unknown endpoint", path });
                         break;
@@ -204,6 +206,28 @@ namespace TabsPortalHelper
             ctx.Response.ContentLength64 = bytes.Length;
             ctx.Response.OutputStream.Write(bytes, 0, bytes.Length);
             ctx.Response.Close();
+        }
+
+        /// <summary>GET /bluebeam/recent?limit=N — PDFs most recently opened in Revu, newest first.</summary>
+        void HandleBluebeamRecent(HttpListenerContext ctx, System.Collections.Specialized.NameValueCollection query)
+        {
+            int limit = 15;
+            int.TryParse(query["limit"], out var parsed);
+            if (parsed > 0) limit = Math.Min(parsed, 50);
+            try
+            {
+                var files = BluebeamRecentFiles.Read(limit);
+                WriteJson(ctx, 200, new
+                {
+                    success = true,
+                    database = BluebeamRecentFiles.FindDatabase(),
+                    files = files.Select(f => new { path = f.Path, folder = f.Folder, name = f.Name, openedAt = f.OpenedAt.ToString("o"), exists = f.Exists, sizeBytes = f.SizeBytes }).ToList()
+                });
+            }
+            catch (Exception ex)
+            {
+                WriteJson(ctx, 500, new { success = false, error = ex.Message });
+            }
         }
 
         void HandleFiles(HttpListenerContext ctx, System.Collections.Specialized.NameValueCollection query)
