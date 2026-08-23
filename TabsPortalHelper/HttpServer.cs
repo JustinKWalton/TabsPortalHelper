@@ -273,6 +273,14 @@ namespace TabsPortalHelper
                         notFound.Add(fileId);
                 }
 
+                // Direct local paths (TABSportal desktop app) — no DriveFS
+                // resolution needed; additive alongside FileIds.
+                foreach (var p in req.FilePaths ?? new List<string>())
+                {
+                    if (File.Exists(p)) resolvedPaths.Add(p);
+                    else notFound.Add(p);
+                }
+
                 var mapiReq = new MapiHelper.ComposeRequest
                 {
                     To        = req.To  ?? new List<string>(),
@@ -371,12 +379,14 @@ namespace TabsPortalHelper
 
         class ComposeRequestDto
         {
-            public List<string>? To      { get; set; }
-            public List<string>? Cc      { get; set; }
-            public List<string>? Bcc     { get; set; }
-            public string?       Subject { get; set; }
-            public string?       Body    { get; set; }
-            public List<string>? FileIds { get; set; }
+            public List<string>? To        { get; set; }
+            public List<string>? Cc        { get; set; }
+            public List<string>? Bcc       { get; set; }
+            public string?       Subject   { get; set; }
+            public string?       Body      { get; set; }
+            public List<string>? FileIds   { get; set; }
+            /// Local absolute paths, attached as-is (TABSportal desktop app).
+            public List<string>? FilePaths { get; set; }
         }
 
         static void WriteJson(HttpListenerContext ctx, int statusCode, object payload)
