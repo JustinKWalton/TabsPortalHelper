@@ -20,7 +20,7 @@ namespace TabsPortalHelper
     /// </summary>
     public static class BluebeamRecentFiles
     {
-        public record RecentFile(string Path, string Folder, string Name, DateTime OpenedAt, bool Exists, long SizeBytes);
+        public record RecentFile(string Path, string Folder, string Name, DateTime OpenedAt, bool Exists, long SizeBytes, DateTime? ModifiedAt);
 
         static readonly long TicksMin = new DateTime(2015, 1, 1).Ticks;
 
@@ -85,8 +85,9 @@ namespace TabsPortalHelper
                 {
                     bool exists = File.Exists(full);
                     long size = 0;
-                    if (exists) { try { size = new FileInfo(full).Length; } catch { } }
-                    best[full] = new RecentFile(full, folder, name, when, exists, size);
+                    DateTime? modified = null;
+                    if (exists) { try { var fi = new FileInfo(full); size = fi.Length; modified = fi.LastWriteTime; } catch { } }
+                    best[full] = new RecentFile(full, folder, name, when, exists, size, modified);
                 }
                 i = p + nameLen; // skip past this record
             }

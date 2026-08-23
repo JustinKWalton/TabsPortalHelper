@@ -221,7 +221,7 @@ namespace TabsPortalHelper
                 {
                     success = true,
                     database = BluebeamRecentFiles.FindDatabase(),
-                    files = files.Select(f => new { path = f.Path, folder = f.Folder, name = f.Name, openedAt = f.OpenedAt.ToString("o"), exists = f.Exists, sizeBytes = f.SizeBytes }).ToList()
+                    files = files.Select(f => new { path = f.Path, folder = f.Folder, name = f.Name, openedAt = f.OpenedAt.ToString("o"), modifiedAt = f.ModifiedAt?.ToString("o"), exists = f.Exists, sizeBytes = f.SizeBytes }).ToList()
                 });
             }
             catch (Exception ex)
